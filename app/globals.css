@@ -178,3 +178,59 @@ input[type="number"] {
 .linear-border-box {
   border-radius: 24px; /* slightly less than wrapper for clean padding */
 }
+
+.idle-button {
+  border-radius: 8px;
+  background: linear-gradient(90deg, #b9f8ef 0%, #07fdf4 53.61%, #9eec46 100%);
+  box-shadow: 0 10px 30px 0 rgba(26, 146, 82, 0.4);
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  height: auto;
+  padding: 14px 38.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.idle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 45px 0 rgba(26, 146, 82, 0.4);
+  background: linear-gradient(90deg, #b9f8ef 0%, #07fdf4 53.61%, #9eec46 100%);
+}
+
+.learn-more-button-shadow {
+  box-shadow: 0 10px 30px 0 rgba(26, 146, 82, 0.4);
+}
+
+.hero-img-shadow {
+  box-shadow: 0 20px 16.6px 0 rgba(0, 0, 0, 0.64);
+}
+
+.get-started-bg {
+  background: linear-gradient(90deg, #0b0b17 0%, #16b166 100%);
+}
+
+.bg-grain {
+  background: 'url("/noise.png")';
+}
+
+.one-bg {
+  background: linear-gradient(90deg, #b9f8ef 0%, #07fdf4 43.27%, #9eec46 100%);
+  box-shadow: 0 6.915px 20.745px 0 rgba(26, 146, 82, 0.4);
+}
+
+.faq-text {
+  background: var(
+    --Greed-grad,
+    linear-gradient(90deg, #b9f8ef 0%, #07fdf4 53.61%, #9eec46 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
