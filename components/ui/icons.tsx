@@ -776,4 +776,54 @@ export const Icons = {
       />
     </svg>
   ),
+  gifts: () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="96"
+      height="96"
+      viewBox="0 0 96 96"
+      fill="none"
+    >
+      <path
+        d="M15.8066 71.6663C15.8066 83.6108 19.7881 87.5922 31.7325 87.5922H63.5844C75.5288 87.5922 79.5103 83.6108 79.5103 71.6663V39.8145H15.8066V55.1033"
+        stroke="white"
+        stroke-width="6"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M85.6018 27.8707V31.8522C85.6018 36.2318 83.4916 39.8151 77.6388 39.8151H17.9166C11.8249 39.8151 9.95361 36.2318 9.95361 31.8522V27.8707C9.95361 23.491 11.8249 19.9077 17.9166 19.9077H77.6388C83.4916 19.9077 85.6018 23.491 85.6018 27.8707Z"
+        stroke="white"
+        stroke-width="6"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M46.3444 19.9071H24.3666C23.0129 18.434 23.0527 16.1646 24.486 14.7312L30.1397 9.07752C31.6129 7.60437 34.0416 7.60437 35.5147 9.07752L46.3444 19.9071Z"
+        stroke="white"
+        stroke-width="6"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M71.1492 19.9071H49.1714L60.001 9.07752C61.4742 7.60437 63.9029 7.60437 65.376 9.07752L71.0297 14.7312C72.4631 16.1646 72.5029 18.434 71.1492 19.9071Z"
+        stroke="white"
+        stroke-width="6"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M35.5945 39.8145V60.2793C35.5945 63.4645 39.0982 65.3358 41.7658 63.6237L45.5084 61.1552C46.8621 60.2793 48.5741 60.2793 49.888 61.1552L53.4315 63.5441C56.0593 65.2959 59.6028 63.4246 59.6028 60.2395V39.8145H35.5945Z"
+        stroke="white"
+        stroke-width="6"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  ),
 };

@@ -130,7 +130,7 @@ const Page = () => {
             <div className="bg-white font-semibold learn-more-button-shadow md:text-base text-[11.064px] w-max flex items-center justify-center rounded-full py-2.5 md:px-5 px-4 text-black">
               1
             </div>
-            <div className="rounded-full bg-white/5 p-[29.556px] relative w-max mx-auto">
+            <div className="rounded-full mt-[43px] mb-[75px] bg-white/5 p-[29.556px] relative w-max mx-auto">
               <div className="bg-white/5 p-[29.556px] mx-auto size-full group-hover:animate-ping rounded-full absolute -translate-x-1/2 left-1/2 top-1/2 -translate-y-1/2" />
               <Icons.check />
             </div>
@@ -150,7 +150,7 @@ const Page = () => {
             <div className="bg-white font-semibold learn-more-button-shadow md:text-base text-[11.064px] w-max flex items-center justify-center rounded-full py-2.5 md:px-5 px-4 text-black">
               2
             </div>
-            <div className="rounded-full bg-white/5 p-[29.556px] relative w-max mx-auto">
+            <div className="rounded-full mt-[43px] mb-[75px] bg-white/5 p-[29.556px] relative w-max mx-auto">
               <div className="bg-white/5 p-[29.556px] mx-auto size-full group-hover:animate-ping rounded-full absolute -translate-x-1/2 left-1/2 top-1/2 -translate-y-1/2" />
               <Icons.download />
             </div>
@@ -170,9 +170,9 @@ const Page = () => {
             <div className="bg-white font-semibold learn-more-button-shadow md:text-base text-[11.064px] w-max flex items-center justify-center rounded-full py-2.5 md:px-5 px-4 text-black">
               3
             </div>
-            <div className="rounded-full bg-white/5 p-[29.556px] relative w-max mx-auto">
+            <div className="rounded-full mt-[43px] mb-[75px] bg-white/5 p-[29.556px] relative w-max mx-auto">
               <div className="bg-white/5 p-[29.556px] mx-auto size-full group-hover:animate-ping rounded-full absolute -translate-x-1/2 left-1/2 top-1/2 -translate-y-1/2" />
-              <Icons.keyboardOpen />
+              <Icons.gifts />
             </div>
             <div className="md:space-y-4 space-y-[11.064px] md:max-w-[386px] max-w-[213.676px]">
               <h3 className="md:text-[29.92px] text-[20.69px] font-semibold">
