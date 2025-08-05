@@ -583,7 +583,7 @@ const Page = () => {
                     alt=""
                     width={439.09}
                     height={439.09}
-                    className="md:rounded-[60px] md:max-w-[381.046px] w-full rounded-[30px]"
+                    className="md:rounded-[60px] md:max-w-[381.046px] md:max-h-[381.046px]  rounded-[30px]"
                   />
                   <div className="space-y-[28.64px] max-w-[446px]">
                     <div className="space-y-4">
