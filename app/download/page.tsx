@@ -62,34 +62,58 @@ const Page = () => {
             Supported Devices
           </h3>
           <div className="grid md:grid-cols-3 md:gap-2.5 gap-3.5">
-            <div className="md:py-[161px] bg-grain relative md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
-              <div className="md:space-y-[34px] space-y-[20.249px]">
-                <div className="rounded-full">
-                  <Icons.linux2 />
+            <div className="md:pt-[161px] bg-grain relative md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
+              <div className="md:space-y-[60px] space-y-[20.249px]">
+                <div className="md:space-y-[34px] flex flex-col items-center justify-center space-y-[20.249px]">
+                  <div className="rounded-full">
+                    <Icons.linux2 />
+                  </div>
+                  <p className="md:text-[29.92px] text-[17.819px]  font-semibold text-center">
+                    Linux
+                  </p>
                 </div>
-                <p className="md:text-[29.92px] text-[17.819px]  font-semibold text-center">
-                  Linux
-                </p>
+                <button
+                  type="button"
+                  className="rounded-full invisible whitespace-nowrap !border-white/25 border-[1px] learn-more-button-shadow !bg-none bg-transparent md:text-lg text-sm font-semibold text-white md:px-[48.5px] px-8 h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
+                >
+                  Learn more
+                </button>
               </div>
             </div>
-            <div className="md:py-[161px] bg-grain relative md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
-              <div className="md:space-y-[34px] space-y-[20.249px]">
-                <div className="rounded-full">
-                  <Icons.mac2 />
+            <div className="md:pt-[161px] bg-grain relative md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
+              <div className="md:space-y-[60px] space-y-[20.249px]">
+                <div className="md:space-y-[34px] flex flex-col items-center justify-center space-y-[20.249px]">
+                  <div className="rounded-full">
+                    <Icons.mac2 />
+                  </div>
+                  <p className="md:text-[29.92px] text-[17.819px]  font-semibold text-center">
+                    MacOs
+                  </p>
                 </div>
-                <p className="md:text-[29.92px] text-[17.819px]  font-semibold text-center">
-                  MacOS
-                </p>
+                <button
+                  type="button"
+                  className="rounded-full whitespace-nowrap !border-white/25 border-[1px] learn-more-button-shadow !bg-none bg-transparent md:text-lg text-sm font-semibold text-white md:px-[48.5px] px-8 h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
+                >
+                  Coming soon
+                </button>
               </div>
             </div>
-            <div className="md:py-[161px] bg-grain relative md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
-              <div className="md:space-y-[34px] space-y-[20.249px]">
-                <div className="rounded-full">
-                  <Icons.windows2 />
+            <div className="md:pt-[161px] bg-grain relative md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
+              <div className="md:space-y-[60px] space-y-[20.249px]">
+                <div className="md:space-y-[34px] flex flex-col items-center justify-center space-y-[20.249px]">
+                  <div className="rounded-full">
+                    <Icons.windows2 />
+                  </div>
+                  <p className="md:text-[29.92px] text-[17.819px]  font-semibold text-center">
+                    Windows
+                  </p>
                 </div>
-                <p className="md:text-[29.92px] text-[17.819px]  font-semibold text-center">
-                  Windows
-                </p>
+                <button
+                  type="button"
+                  className="rounded-full whitespace-nowrap !border-white/25 border-[1px] learn-more-button-shadow !bg-none bg-transparent md:text-lg text-sm font-semibold text-white md:px-[48.5px] px-8 h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
+                >
+                  Coming soon
+                </button>
               </div>
             </div>
           </div>

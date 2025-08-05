@@ -18,7 +18,14 @@ import {
 import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { cn } from "@/lib/utils";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Page = () => {
   useEffect(() => {
@@ -30,7 +37,7 @@ const Page = () => {
   }, []);
   return (
     <main className="bg-[#070708] overflow-hidden bg-grain relative">
-      <section className="bg-[url('/n-a.png')] bg-no-repeat bg-cover pt-[150px] pb-[75px]">
+      <section className="bg-[url('/n-a.png')] bg-no-repeat bg-cover md:pt-[150px] pt-[75px] pb-[75px]">
         <div className="max-w-[1235px] px-2 mx-auto relative z-10 md:space-y-0 space-y-[55px]">
           <div className="flex md:flex-row flex-col gap-[69px] md:items-start items-center justify-between">
             <div className="space-y-3 max-w-[622px] mt-[75px]">
@@ -51,11 +58,11 @@ const Page = () => {
                   our AI-powered optimization engine.
                 </h2>
               </div>
-              <div className="flex items-center gap-12 ">
+              <div className="flex items-center md:gap-12 gap-7">
                 <Link
                   href="#more"
                   type="button"
-                  className="rounded-[8px] !border-[#D8D8D8] border-[1px] learn-more-button-shadow !bg-none md:text-base text-sm font-semibold text-white px-[48.5px] h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
+                  className="rounded-[8px] whitespace-nowrap !border-[#D8D8D8] border-[1px] learn-more-button-shadow !bg-none md:text-base text-sm font-semibold text-white md:px-[48.5px] px-8 h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
                 >
                   Learn more
                 </Link>
@@ -76,7 +83,7 @@ const Page = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="md:w-[544px] relative md:h-[601.465px] bg-grain relative w-[326.51px] h-[361px] bg-[#2E2E2E] md:aspect-[544.00/601.46] aspect-[326.51px/361px] rounded-[16px] hero-img-shadow">
+              <div className="md:w-[544px] relative md:h-[601.465px] bg-grain w-[326.51px] h-[361px] bg-[#2E2E2E] md:aspect-[544.00/601.46] aspect-[326.51px/361px] rounded-[16px] hero-img-shadow">
                 <Image
                   src="/n-o.png"
                   alt=""
@@ -90,14 +97,14 @@ const Page = () => {
                 alt=""
                 width={113.43}
                 height={113.43}
-                className="absolute bottom-[20%] -left-[6%] animate-bounce"
+                className="absolute bottom-[20%] md:size-[113.43] size-[57.645px] -left-[6%] animate-bounce"
               />
               <Image
                 src="/n-c.svg"
                 alt=""
                 width={113.43}
                 height={113.43}
-                className="absolute top-[15%] -right-[7%] animate-pulse"
+                className="absolute top-[15%] md:size-[113.43] size-[57.645px] -right-[7%] animate-pulse"
               />
             </div>
           </div>
@@ -231,7 +238,7 @@ const Page = () => {
               </div>
               <Link
                 href="/download"
-                className="idle-button hover:opacity-80 md:text-base text-[11.064px] max-w-[181px]"
+                className="idle-button hover:opacity-80 whitespace-nowrap md:text-base text-[11.064px] max-w-[181px]"
               >
                 Download Idle
               </Link>
@@ -527,19 +534,31 @@ const Page = () => {
         </div>
       </section>
 
-      <section id="team" className="py-20 space-y-[60px]">
-        <div className="max-w-[1235px] px-5 mx-auto">
-          <h2 className="md:text-[50px] text-[29px] font-bold leading-[100%] max-w-[599px]">
+      <Carousel
+        opts={{
+          align: "start",
+        }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
+        id="team"
+        className="py-20 space-y-[60px] px-5 mx-auto"
+      >
+        <div className="max-w-[1235px] px-5 mx-auto flex items-center justify-between">
+          <h2 className="md:text-[50px]  text-[29px] font-bold leading-[100%] max-w-[599px]">
             <BoxReveal boxColor={"#fff"} duration={0.5}>
               <span>Meet our talented team!</span>
             </BoxReveal>
           </h2>
+          <div className="flex items-center relative">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
         </div>
 
-        <InfiniteMovingCards
-          speed="slow"
-          className="!gap-x-[55.89px] flex md:gap-y-[102.9px] gap-y-20"
-        >
+        <CarouselContent>
           {teamData.map(
             (
               {
@@ -552,11 +571,9 @@ const Page = () => {
               },
               index,
             ) => (
-              <div
+              <CarouselItem
                 key={index}
-                data-aos="fade-up"
-                data-aos-duration={1500 * index}
-                className="space-y-[33px] mr-[55px]"
+                className="space-y-[33px] md:basis-1/2 md:mr-[55px] "
               >
                 <div className="flex md:flex-row flex-col gap-5">
                   <Image
@@ -564,7 +581,7 @@ const Page = () => {
                     alt="Base Logo"
                     width={439.09}
                     height={439.09}
-                    className="md:rounded-[60px] rounded-[30px]"
+                    className="md:rounded-[60px] md:max-w-[381.046px] md:max-h-[381.046px]  rounded-[30px]"
                   />
                   <div className="space-y-[28.64px] max-w-[446px]">
                     <div className="space-y-4">
@@ -588,11 +605,11 @@ const Page = () => {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </CarouselItem>
             ),
           )}
-        </InfiniteMovingCards>
-      </section>
+        </CarouselContent>
+      </Carousel>
       <section className="space-y-[49px] max-w-[1235px] px-5 mx-auto">
         <h4 className="md:text-[30px] text-[20px] font-medium leading-[100%]">
           Selected Experience from
