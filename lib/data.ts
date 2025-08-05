@@ -31,6 +31,17 @@ export const teamData = [
     description:
       "Kelly is the founder of Genie, a platform that connects the top 1% of Silicon Valley developers to accelerate innovation across Web3 and emerging technologies. Previously a software engineer at PayPal, she brings deep technical expertise and a passion for building scalable, user-centric solutions. A graduate of the University of Chicago, Kelly combines rigorous academic training with hands-on experience in fintech and blockchain. She leads Genie’s mission to drive adoption of decentralized technologies and foster vibrant developer ecosystems.",
   },
+
+  {
+    image: "/adam.png",
+    name: "Adam",
+    designation: "CTO",
+    socialMediaUrl: "https://www.linkedin.com/in/kellytranha",
+    socialMediaName: "Twitter",
+    description:
+      "Adam is the CTO behind $500M+ in Web3 protocol builds, partnering with institutions to create scalable, secure blockchain infrastructure. Known for bridging deep technical expertise with collaborative leadership, he drives innovation in decentralized systems, empowering teams to build impactful solutions that shape the future of Web3 and open digital ecosystems.",
+  },
+
   {
     image: "/david.png",
     name: "David Wang",

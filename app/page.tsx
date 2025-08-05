@@ -578,7 +578,7 @@ const Page = () => {
                 <div className="flex md:flex-row flex-col gap-5">
                   <Image
                     src={image}
-                    alt="Base Logo"
+                    alt=""
                     width={439.09}
                     height={439.09}
                     className="md:rounded-[60px] md:max-w-[381.046px] md:max-h-[381.046px]  rounded-[30px]"
