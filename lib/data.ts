@@ -46,7 +46,7 @@ export const teamData = [
     image: "/david.png",
     name: "David Wang",
     designation: "Innovation Advisor & Global Partnerships Leader",
-    socialMediaUrl: "https://x.com/opendesciorg",
+    socialMediaUrl: "https://x.com/wang_8?s=21",
     socialMediaName: "Twitter",
     position: "Founder @ OpenDeSci | Serial Entrepreneur | Forbes 30U30",
     description:
