@@ -617,7 +617,7 @@ const Page = () => {
           Selected Experience from
         </h4>
 
-        <InfiniteMovingCards className=" bg-[#0059CE] rounded-[12px] md:py-8 py-2.5">
+        <InfiniteMovingCards className=" bg-[#1F2029] rounded-[12px] md:py-8 py-2.5">
           <Image
             src="/world-economic-forum.svg"
             alt=""
