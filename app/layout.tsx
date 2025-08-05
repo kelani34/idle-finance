@@ -56,12 +56,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <LenisProvider> */}
+          <LenisProvider>
           {/* <SmoothCursor /> */}
           <Toaster />
           <Navbar />
           {children}
-          {/* </LenisProvider> */}
+          </LenisProvider>
         </ThemeProvider>
       </body>
     </html>
