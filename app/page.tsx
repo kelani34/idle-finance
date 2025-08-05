@@ -28,7 +28,7 @@ const Page = () => {
     });
   }, []);
   return (
-    <main className="bg-[#070708] overflow-hidden">
+    <main className="bg-[#070708] overflow-hidden bg-grain relative">
       <section className="bg-[url('/n-a.png')] bg-no-repeat bg-cover pt-[150px] pb-[75px]">
         <div className="max-w-[1235px] px-2 mx-auto relative z-10 md:space-y-0 space-y-[55px]">
           <div className="flex md:flex-row flex-col gap-[69px] md:items-start items-center justify-between">
@@ -51,12 +51,13 @@ const Page = () => {
                 </h2>
               </div>
               <div className="flex items-center gap-7 ">
-                <button
+                <Link
+                  href="#more"
                   type="button"
                   className="rounded-[8px] !border-[#D8D8D8] border-[1px] learn-more-button-shadow !bg-none md:text-base text-sm font-semibold text-white px-[48.5px] h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
                 >
                   Learn more
-                </button>
+                </Link>
 
                 <div className="flex items-center gap-[6.978px]">
                   <p className="text-2xl leading-[93.305%] font-satoshi">
@@ -74,7 +75,15 @@ const Page = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="md:w-[544px] md:h-[601.465px] w-[326.51px] h-[361px] bg-[#2E2E2E] md:aspect-[544.00/601.46] aspect-[326.51px/361px] rounded-[16px] hero-img-shadow" />
+              <div className="md:w-[544px] relative md:h-[601.465px] bg-grain relative w-[326.51px] h-[361px] bg-[#2E2E2E] md:aspect-[544.00/601.46] aspect-[326.51px/361px] rounded-[16px] hero-img-shadow">
+                <Image
+                  src="/n-o.png"
+                  alt=""
+                  width={994.3786010742188}
+                  height={663}
+                  className="w-full h-full"
+                />
+              </div>
               <Image
                 src="/n-b.svg"
                 alt=""
@@ -103,7 +112,7 @@ const Page = () => {
       </section>
       <section className="relative ">
         <div className="h-[342px] bg-[#070708] blur-[70px] w-[150%] absolute left-1/2 -translate-x-1/2 -top-[150%]" />
-        <div className="max-w-[1235px] relative mx-auto bg-[#0059CE] md:rounded-[12px] md:py-4 py-[9.16px]">
+        <div className="max-w-[1235px] mx-auto bg-grain relative bg-[#0059CE] md:rounded-[12px] md:py-4 py-[9.16px]">
           <InfiniteMovingCards>
             <div className="rounded-[50px] bg-[#01010D1F] md:p-2.5 p-[5.769px] w-max flex gap-[10.783px] items-center">
               <Image
@@ -196,7 +205,10 @@ const Page = () => {
         <div className="md:h-[342px] py-4 bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 -bottom-[20%]" />
       </section>
 
-      <section className="max-w-[1235px] mx-auto relative px-5 z-10 space-y-[46px] md:pt-[113px] pt-[77px]">
+      <section
+        id="more"
+        className="max-w-[1235px] mx-auto relative px-5 z-10 space-y-[46px] md:pt-[113px] pt-[77px]"
+      >
         <h3 className="md:text-[52.079px] text-[30px] font-bold text-center leading-[100%] text-white ">
           How to Get Started
         </h3>

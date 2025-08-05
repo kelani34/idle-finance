@@ -25,7 +25,7 @@ const Page = () => {
     });
   }, []);
   return (
-    <main className="bg-[#070708] overflow-hidden">
+    <main className="bg-[#070708] overflow-hidden bg-grain relative">
       <section className="bg-[url('/n-a.png')] bg-no-repeat  bg-cover ">
         <div className="bg-[url('/d-a.png')] bg-no-repeat h-screen  md:pt-[150px] pt-[50px] md:bg-bottom-right bg-[-250px_100%] md:bg-size-[1338.56px_842.00px] bg-size-[759px_430px]">
           <div className="max-w-[1235px]  px-5 mx-auto relative z-10 md:space-y-0 space-y-[55px]">
@@ -62,7 +62,7 @@ const Page = () => {
             Supported Devices
           </h3>
           <div className="grid md:grid-cols-3 md:gap-2.5 gap-3.5">
-            <div className="md:py-[161px] md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
+            <div className="md:py-[161px] bg-grain relative md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
               <div className="md:space-y-[34px] space-y-[20.249px]">
                 <div className="rounded-full">
                   <Icons.linux2 />
@@ -72,7 +72,7 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div className="md:py-[161px] md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
+            <div className="md:py-[161px] bg-grain relative md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
               <div className="md:space-y-[34px] space-y-[20.249px]">
                 <div className="rounded-full">
                   <Icons.mac2 />
@@ -82,7 +82,7 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div className="md:py-[161px] md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
+            <div className="md:py-[161px] bg-grain relative md:px-[107px] py-[95.883px] px-[63.723px] bg-[#0B0B17] rounded-[16px] flex items-center justify-center">
               <div className="md:space-y-[34px] space-y-[20.249px]">
                 <div className="rounded-full">
                   <Icons.windows2 />
@@ -100,7 +100,7 @@ const Page = () => {
           3 Steps on how to earn
         </h3>
         <div className="grid md:grid-cols-3 gap-[18px]">
-          <div className="bg-[#0B0B17] group md:space-y-[27px] space-y-[18.671px] w-full relative overflow-hidden md:py-6 md:px-[18px] p-3.5 rounded-[16px]">
+          <div className="bg-[#0B0B17] bg-grain group md:space-y-[27px] space-y-[18.671px] w-full relative overflow-hidden md:py-6 md:px-[18px] p-3.5 rounded-[16px]">
             <div className="bg-white font-semibold learn-more-button-shadow md:text-base text-[11.064px] w-max flex items-center justify-center rounded-full py-2.5 md:px-5 px-4 text-black">
               1
             </div>
@@ -120,7 +120,7 @@ const Page = () => {
             </div>
             <div className="h-[771.159px] w-[354.353px] rotate-[135deg] bg-[#31A88D] rounded-full absolute -bottom-[90%] right-[-55%] blur-[150px] opacity-20" />
           </div>
-          <div className="bg-[#0B0B17] group md:space-y-[27px] space-y-[18.671px] w-full relative overflow-hidden md:py-6 md:px-[18px] p-3.5 rounded-[16px]">
+          <div className="bg-[#0B0B17] bg-grain group md:space-y-[27px] space-y-[18.671px] w-full relative overflow-hidden md:py-6 md:px-[18px] p-3.5 rounded-[16px]">
             <div className="bg-white font-semibold learn-more-button-shadow md:text-base text-[11.064px] w-max flex items-center justify-center rounded-full py-2.5 md:px-5 px-4 text-black">
               2
             </div>
@@ -140,7 +140,7 @@ const Page = () => {
             </div>
             <div className="h-[771.159px] w-[354.353px] rotate-[135deg] bg-[#31A88D] rounded-full absolute -bottom-[90%] right-[-55%] blur-[150px] opacity-20" />
           </div>
-          <div className="bg-[#0B0B17] group md:space-y-[27px] space-y-[18.671px] w-full relative overflow-hidden md:py-6 md:px-[18px] p-3.5 rounded-[16px]">
+          <div className="bg-[#0B0B17] bg-grain group md:space-y-[27px] space-y-[18.671px] w-full relative overflow-hidden md:py-6 md:px-[18px] p-3.5 rounded-[16px]">
             <div className="bg-white font-semibold learn-more-button-shadow md:text-base text-[11.064px] w-max flex items-center justify-center rounded-full py-2.5 md:px-5 px-4 text-black">
               2
             </div>
@@ -153,7 +153,7 @@ const Page = () => {
                 Earn
               </h3>
               <div className="overflow-hidden">
-                <p className="md:text-[17.111px] md:translate-y-10 md:group-hover:translate-y-0 delay-100 duration-300 text-[11.833px] text-white/80 ">
+                <p className="md:text-[17.111px] md:translate-y-14 md:group-hover:translate-y-0 delay-100 duration-300 text-[11.833px] text-white/80 ">
                   Sign into your Idle account to start earning rewards
                 </p>
               </div>
@@ -165,7 +165,7 @@ const Page = () => {
       <section className="relative md:py-[156px] py-[50px] px-5">
         <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#31A88D] rounded-full top-[10%] absolute left-[-15%] blur-[150px] opacity-20" />
 
-        <div className="rounded-[18px] download-now max-w-[1235px] mx-auto relative z-10 flex flex-col items-center justify-center py-[65px] px-5 space-y-[71px]">
+        <div className="rounded-[18px] download-now bg-grain max-w-[1235px] mx-auto relative z-10 flex flex-col items-center justify-center py-[65px] px-5 space-y-[71px]">
           <h3 className="md:text-[52.079px] text-[38.56px] max-w-[400px] font-medium text-center leading-[100%] text-white ">
             Download Idle App Now!
           </h3>
