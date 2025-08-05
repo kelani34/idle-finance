@@ -36,7 +36,7 @@ export const teamData = [
     image: "/adam.png",
     name: "Adam",
     designation: "CTO",
-    socialMediaUrl: "https://www.x.com/opendesciorg",
+    socialMediaUrl: "https://x.com/adamcrypto321",
     socialMediaName: "Twitter",
     description:
       "Adam is the CTO behind $500M+ in Web3 protocol builds, partnering with institutions to create scalable, secure blockchain infrastructure. Known for bridging deep technical expertise with collaborative leadership, he drives innovation in decentralized systems, empowering teams to build impactful solutions that shape the future of Web3 and open digital ecosystems.",
