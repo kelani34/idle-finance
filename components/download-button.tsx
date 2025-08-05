@@ -38,8 +38,9 @@ export default function DownloadButton() {
 
   return (
     <Button className="idle-button hover:opacity-80">
-      {osIcons[os]}
-      {osLabels[os]}
+      {/* {osIcons[os]}
+      {osLabels[os]} */}
+      <Icons.linux /> Download
     </Button>
   );
 }

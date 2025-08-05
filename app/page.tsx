@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { efficiencyData, faqData, people, teamData } from "@/lib/data";
@@ -18,6 +18,7 @@ import {
 import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { cn } from "@/lib/utils";
 
 const Page = () => {
   useEffect(() => {
@@ -228,9 +229,15 @@ const Page = () => {
                   everything.
                 </p>
               </div>
-              <Button className="idle-button hover:opacity-80 md:text-base text-[11.064px]">
+              <Link
+                href="/download"
+                className={cn(
+                  buttonVariants(),
+                  "idle-button hover:opacity-80 md:text-base text-[11.064px]",
+                )}
+              >
                 Download Idle
-              </Button>
+              </Link>
             </div>
           </div>
           <div className="flex md:flex-row flex-col gap-[9.68px]">
@@ -532,7 +539,10 @@ const Page = () => {
           </h2>
         </div>
 
-        <InfiniteMovingCards className="gap-x-[55.89px] flex md:gap-y-[102.9px] gap-y-20">
+        <InfiniteMovingCards
+          speed="slow"
+          className="!gap-x-[55.89px] flex md:gap-y-[102.9px] gap-y-20"
+        >
           {teamData.map(
             (
               {
@@ -549,7 +559,7 @@ const Page = () => {
                 key={index}
                 data-aos="fade-up"
                 data-aos-duration={1500 * index}
-                className="space-y-[33px]"
+                className="space-y-[33px] mr-[55px]"
               >
                 <div className="flex md:flex-row flex-col gap-5">
                   <Image
@@ -620,9 +630,15 @@ const Page = () => {
                   store soon
                 </p>
               </div>
-              <Button className="idle-button hover:opacity-80 md:text-base text-[11.064px]">
+              <Link
+                href="/download"
+                className={cn(
+                  buttonVariants(),
+                  "idle-button hover:opacity-80 md:text-base text-[11.064px]",
+                )}
+              >
                 Download Idle
-              </Button>
+              </Link>
             </div>
           </div>
         </div>

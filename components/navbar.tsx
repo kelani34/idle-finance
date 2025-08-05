@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Icons } from "./ui/icons";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
   return (
@@ -14,9 +15,15 @@ export const Navbar = () => {
               IdleFinance
             </span>
           </Link>
-          <Button className="idle-button md:visible invisible hover:opacity-80">
+          <Link
+            href="/download"
+            className={cn(
+              buttonVariants(),
+              "idle-button md:visible invisible hover:opacity-80",
+            )}
+          >
             Download Idle
-          </Button>
+          </Link>
         </div>
       </div>
     </div>
