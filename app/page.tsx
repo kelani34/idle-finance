@@ -1,10 +1,14 @@
 "use client";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { articlesData, efficiencyData, faqData, teamData } from "@/lib/data";
+import { NumberTicker } from "@/components/ui/number-ticker";
+import { efficiencyData, faqData, people, teamData } from "@/lib/data";
 import Image from "next/image";
+import AOS from "aos";
+import { useEffect } from "react";
+import { BoxReveal } from "@/components/ui/box-reveal";
 import {
   Accordion,
   AccordionContent,
@@ -12,41 +16,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Footer } from "@/components/footer";
-import { NumberTicker } from "@/components/ui/number-ticker";
-import { BoxReveal } from "@/components/ui/box-reveal";
-import { TextAnimate } from "@/components/ui/text-animate";
-import { useEffect, useRef, useState } from "react";
-import AOS from "aos";
-import { MorphingText } from "@/components/ui/morphing-text";
-import { useScroll, useTransform, motion } from "motion/react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
-export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-  });
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-    };
-  }, []);
-
-  const scaleDimensions = () => {
-    return isMobile ? [0.7, 0.9] : [1.05, 1];
-  };
-
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-
+const Page = () => {
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -55,142 +28,249 @@ export default function Home() {
     });
   }, []);
   return (
-    <main className="overflow-hidden">
-      <section ref={containerRef} className="relative pt-[256px] pb-[100px]">
-        <div className="flex z-10 flex-col items-center">
-          <div className="bg-[url(/background.png)] h-full w-full absolute translate-x-1/2 -left-1/2 -top-1/2 translate-y-1/2 bg-cover bg-center bg-no-repeat" />
-          <h1 className="text-[#EBF9FF] relative md:block hidden text-[55.03px] font-satoshi font-bold text-center mx-auto max-w-[975px] leading-[100%]">
-            <TextAnimate
-              duration={0.3}
-              animation="blurInUp"
-              by="character"
-              once
-            >
-              Seamlessly monetize your surplus
-            </TextAnimate>
-            <TextAnimate
-              duration={0.5}
-              animation="blurInUp"
-              by="character"
-              once
-            >
-              compute, bandwidth, and storage
-            </TextAnimate>
-            <TextAnimate
-              duration={0.7}
-              animation="blurInUp"
-              by="character"
-              once
-            >
-              with AI-powered optimization
-            </TextAnimate>
-          </h1>
-          <h1 className="text-[#EBF9FF] relative md:hidden text-[30.591px] font-satoshi font-bold text-center mx-auto max-w-[332px] leading-[100%]">
-            Seamlessly monetize your surplus compute, bandwidth, and storage
-            with AI-powered optimization
-          </h1>
+    <main className="bg-[#070708] overflow-hidden">
+      <section className="bg-[url('/n-a.png')] bg-no-repeat bg-cover pt-[150px] pb-[75px]">
+        <div className="max-w-[1235px] px-2 mx-auto relative z-10 md:space-y-0 space-y-[55px]">
+          <div className="flex md:flex-row flex-col gap-[69px] md:items-start items-center justify-between">
+            <div className="space-y-3 max-w-[622px] mt-[75px]">
+              <div className="flex items-center gap-3">
+                <span className="text-[11.152px] font-semibold text-white rounded-[40.424px] bg-black/10 px-[33.5px] py-[9px]">
+                  Easy
+                </span>
+                <span className="text-[11.152px] font-semibold text-white rounded-[40.424px] bg-black/10 px-[33.5px] py-[9px]">
+                  Reliable
+                </span>
+              </div>
+              <div className="space-y-[30px]">
+                <h1 className="md:text-[60px] text-[40px] font-bold text-white leading-[100%]">
+                  Monetize Your Surplus Resources Effortlessly
+                </h1>
+                <h2 className="md:text-2xl text-lg font-medium text-white max-w-[580px]">
+                  Turn idle compute, bandwidth, and storage into revenue with
+                  our AI-powered optimization engine.
+                </h2>
+              </div>
+              <div className="flex items-center gap-7 ">
+                <button
+                  type="button"
+                  className="rounded-[8px] !border-[#D8D8D8] border-[1px] learn-more-button-shadow !bg-none md:text-base text-sm font-semibold text-white px-[48.5px] h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
+                >
+                  Learn more
+                </button>
 
-          <div className="container z-10 !w-max relative py-[13.91px] mt-[53px] mb-[89.72px] px-[15.301px] rounded-[25.038px] border-[1.391px] border-white/[0.37] mx-auto flex items-center gap-[6.978px]">
-            <p className="md:text-[33.476px] text-2xl leading-[93.305%] font-satoshi">
-              Built on
-            </p>
+                <div className="flex items-center gap-[6.978px]">
+                  <p className="text-2xl leading-[93.305%] font-satoshi">
+                    Built on
+                  </p>
 
-            <Image
-              src="/base.svg"
-              alt="Base Logo"
-              width={80.25}
-              height={21.27}
-              className="rounded-[52.336px] bg-white p-[8.723px]"
-            />
+                  <Image
+                    src="/base.svg"
+                    alt="Base Logo"
+                    width={80.25}
+                    height={21.27}
+                    className="rounded-[6px] bg-white p-[6.271px] "
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="md:w-[544px] md:h-[601.465px] w-[326.51px] h-[361px] bg-[#2E2E2E] md:aspect-[544.00/601.46] aspect-[326.51px/361px] rounded-[16px] hero-img-shadow" />
+              <Image
+                src="/n-b.svg"
+                alt=""
+                width={113.43}
+                height={113.43}
+                className="absolute bottom-[20%] -left-[6%] animate-bounce"
+              />
+              <Image
+                src="/n-c.svg"
+                alt=""
+                width={113.43}
+                height={113.43}
+                className="absolute top-[15%] -right-[7%] animate-pulse"
+              />
+            </div>
           </div>
-
-          <motion.div
-            style={{
-              rotateX: rotate,
-              scale,
-            }}
-            className="md:block hidden relative z-10"
-          >
-            <Image
-              src="/home-1.png"
-              alt="Hero Image"
-              width={1284.961}
-              height={827.2}
-              className="-mb-60 relative z-10"
-            />
-          </motion.div>
-          <Image
-            src="/home-1.png"
-            alt="Hero Image"
-            width={1284.961}
-            height={827.2}
-            className="md:-mb-60 relative z-10 md:hidden"
-          />
+          <div className="p-2.5 pr-[26px] md:mx-0 mx-auto bg-black/30 rounded-[102px] w-max flex items-center gap-[14px]">
+            <div className="flex items-center ">
+              <AnimatedTooltip items={people} />
+            </div>
+            <span className="text-lg font-medium ml-4">
+              Just seamless earning{" "}
+            </span>
+          </div>
         </div>
-        <section className="bg-[#000] z-[5] md:block hidden absolute -bottom-[20%] blur-[56px]  w-[150%] -translate-x-[20%] h-[442px]" />
       </section>
-
-      <section className="bg-[#000] md:block hidden -mb-40 -mt-30 blur-[56.80000305175781px]  w-[150%] -translate-x-[20%] h-[442px]" />
-      <section className="bg-[url(/home-8.png)] bg-cover bg-center bg-no-repeat">
-        <section className="mx-auto container md:py-60 py-20  md:h-[780px]">
-          <h1 className="text-[#EBF9FF] max-w-[839px] font-satoshi text-center md:text-[92.85px] text-[31.664px] font-bold leading-[100%] mx-auto">
+      <section className="relative ">
+        <div className="h-[342px] bg-[#070708] blur-[70px] w-[150%] absolute left-1/2 -translate-x-1/2 -top-[150%]" />
+        <div className="max-w-[1235px] relative mx-auto bg-[#0059CE] md:rounded-[12px] md:py-4 py-[9.16px]">
+          <InfiniteMovingCards>
+            <div className="rounded-[50px] bg-[#01010D1F] md:p-2.5 p-[5.769px] w-max flex gap-[10.783px] items-center">
+              <Image
+                src="/liquid-collective-n.svg"
+                alt=""
+                width={51}
+                height={51}
+                className="md:size-[51px] size-[29.423px]"
+              />
+              <span className="md:text-[24.957px] text-[14.398px]">
+                liquid collective
+              </span>
+            </div>
+            <div className="rounded-[50px] bg-[#01010D1F] md:p-2.5 p-[5.769px] w-max flex gap-[10.783px] items-center">
+              <Image
+                src="/lido-n.svg"
+                alt=""
+                width={51}
+                height={51}
+                className="md:size-[51px] size-[29.423px]"
+              />
+              <span className="md:text-[24.957px] text-[14.398px]">Lido</span>
+            </div>
+            <div className="rounded-[50px] bg-[#01010D1F] md:p-2.5 p-[5.769px] w-max flex gap-[10.783px] items-center">
+              <Image
+                src="/rocket-pool-n.svg"
+                alt=""
+                width={51}
+                height={51}
+                className="md:size-[51px] size-[29.423px]"
+              />
+              <span className="md:text-[24.957px] text-[14.398px]">
+                rocketpool
+              </span>
+            </div>
+            <div className="rounded-[50px] bg-[#01010D1F] md:p-2.5 p-[5.769px] w-max flex gap-[10.783px] items-center">
+              <Image
+                src="/solv-n.svg"
+                alt=""
+                width={51}
+                height={51}
+                className="md:size-[51px] size-[29.423px]"
+              />
+              <span className="md:text-[24.957px] text-[14.398px]">Solv</span>
+            </div>
+            <div className="rounded-[50px] bg-[#01010D1F] md:p-2.5 p-[5.769px] w-max flex gap-[10.783px] items-center">
+              <Image
+                src="/morphware-n.svg"
+                alt=""
+                width={51}
+                height={51}
+                className="md:size-[51px] size-[29.423px]"
+              />
+              <span className="md:text-[24.957px] text-[14.398px]">
+                Morphware
+              </span>
+            </div>
+            <div className="rounded-[50px] bg-[#01010D1F] md:p-2.5 p-[5.769px] w-max flex gap-[10.783px] items-center">
+              <Image
+                src="/filecoin-n.svg"
+                alt=""
+                width={51}
+                height={51}
+                className="md:size-[51px] size-[29.423px]"
+              />
+              <span className="md:text-[24.957px] text-[14.398px]">
+                filecoin
+              </span>
+            </div>
+          </InfiniteMovingCards>
+        </div>
+      </section>
+      <section className="max-w-[1235px] px-5 mx-auto relative z-10 md:py-[120px] py-[50px] ">
+        <Image
+          src="/n-d.png"
+          alt=""
+          width={1200.375}
+          height={1067}
+          className="size-full border-[#B9F8EF] md:rounded-[26.397px] rounded-[8.576px] border-[0.226px]"
+        />
+      </section>
+      <section className="bg-[url(/home-8.png)] relative bg-cover bg-center bg-no-repeat">
+        <div className="md:h-[342px] py-4 bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 -top-[20%]" />
+        <div className="mx-auto container md:py-60 py-20  md:h-[980px] relative z-10 flex items-center justify-center">
+          <h1 className="text-[#EBF9FF] max-w-[839px] font-satoshi text-center md:text-[80.593px] text-[32.444px] font-bold leading-[100%] mx-auto">
             The DePIN market is expected to grow{" "}
             <NumberTicker value={6000} className="!text-[#31A88D]" />% by 2028.
           </h1>
-        </section>
+        </div>
+        <div className="md:h-[342px] py-4 bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 -bottom-[20%]" />
       </section>
-      <section className="bg-[#000] md:block hidden -mb-60 -mt-30 blur-[56.80000305175781px]  w-[150%] -translate-x-[20%] h-[442px]" />
 
-      <section
-        id="about"
-        className="container mx-auto flex md:flex-row flex-col items-center justify-center md:gap-10 gap-6 py-20"
-      >
-        <Image
-          data-aos="fade-right"
-          src="/home-2.png"
-          alt="Hero Image"
-          width={514.766}
-          height={466.795}
-          className="md:rounded-[94px] rounded-[57.605px] bg-[#0370F7] md:py-[55px] py-[33px] md:px-[32px] px-[19px]"
-        />
-
-        <div data-aos="fade-up" className="space-y-[49px]">
-          <h2 className="text-white md:text-[40px] text-[23.269px] font-medium font-satoshi leading-[125%] max-w-[635px]">
-            Unlock a new $10 trillion asset class. Your existing tech holds
-            untapped value. Idle Finance brings the decentralized future to your
-            balance sheet, securely and effortlessly.
-          </h2>
-          <Button
-            variant="outline"
-            className="md:text-2xl text-[13.962px] font-medium rounded-[60px] md:px-12 px-6  md:py-5 py-2.5 !border-white !border-2 h-auto"
-          >
-            Get Started
-          </Button>
+      <section className="max-w-[1235px] mx-auto relative px-5 z-10 space-y-[46px] md:pt-[113px] pt-[77px]">
+        <h3 className="md:text-[52.079px] text-[30px] font-bold text-center leading-[100%] text-white ">
+          How to Get Started
+        </h3>
+        <div className="space-y-2.5">
+          <div className="relative rounded-[16px] overflow-hidden w-full md:bg-[url(/n-e.png)] bg-[url(/n-f.png)] bg-right md:bg-contain bg-no-repeat">
+            <div className="get-started-bg opacity-70 absolute h-full w-full" />
+            <div className="md:p-5 p-3.5 md:space-y-[27px] space-y-[18.671px] relative">
+              <div className="one-bg md:text-base font-semibold text-[11.064px] w-max flex items-center justify-center rounded-full py-2.5 md:px-5 px-4 text-black">
+                1
+              </div>
+              <div className="md:space-y-4 space-y-[11.064px] md:max-w-[386px] max-w-[266.922px]">
+                <h3 className="md:text-[29.92px] text-[20.69px] font-semibold">
+                  Download the Idle App
+                </h3>
+                <p className="md:text-[17.111px] text-[11.833px] text-white/80 ">
+                  Get he app to start earning just log in and let Idle handle
+                  everything.
+                </p>
+              </div>
+              <Button className="idle-button hover:opacity-80 md:text-base text-[11.064px]">
+                Download Idle
+              </Button>
+            </div>
+          </div>
+          <div className="flex md:flex-row flex-col gap-[9.68px]">
+            <div className="bg-[#0B0B17] md:space-y-[27px] space-y-[18.671px] w-full relative overflow-hidden md:p-5 p-3.5 rounded-[16px]">
+              <div className="bg-white font-semibold learn-more-button-shadow md:text-base text-[11.064px] w-max flex items-center justify-center rounded-full py-2.5 md:px-5 px-4 text-black">
+                2
+              </div>
+              <div className="md:space-y-4 space-y-[11.064px] md:max-w-[386px] max-w-[213.676px]">
+                <h3 className="md:text-[29.92px] text-[20.69px] font-semibold">
+                  Create an account
+                </h3>
+                <p className="md:text-[17.111px] text-[11.833px] text-white/80 ">
+                  Sign into your Idle account to start earning rewards
+                </p>
+              </div>
+              <div className="rounded-full bg-white/5 p-[29.556px] w-max mt-[-18%] ml-auto">
+                <Icons.keyboardOpen />
+              </div>
+              <div className="h-[771.159px] w-[354.353px] rotate-[135deg] bg-[#31A88D] rounded-full absolute -bottom-[140%] right-[-15%] blur-[150px] opacity-20" />
+            </div>
+            <div className="bg-[#0B0B17] md:space-y-[27px] space-y-[18.671px] w-full relative overflow-hidden md:p-5 p-3.5 rounded-[16px]">
+              <div className="bg-white font-semibold learn-more-button-shadow md:text-base text-[11.064px] w-max flex items-center justify-center rounded-full py-2.5 md:px-5 px-4 text-black">
+                3
+              </div>
+              <div className="md:space-y-4 space-y-[11.064px] md:max-w-[386px] max-w-[213.676px]">
+                <h3 className="md:text-[29.92px] text-[20.69px] font-semibold">
+                  Earn
+                </h3>
+                <p className="md:text-[17.111px] text-[11.833px] text-white/80 ">
+                  Log into your Idle finance account to begin earning rewards.
+                </p>
+              </div>
+              <div className="rounded-full bg-white/5 p-[29.556px] w-max mt-[-18%] ml-auto">
+                <Icons.gift />
+              </div>
+              <div className="h-[771.159px] w-[354.353px] rotate-[135deg] bg-[#31A88D] rounded-full absolute -bottom-[140%] right-[-15%] blur-[150px] opacity-20" />
+            </div>
+          </div>
         </div>
       </section>
-
-      <section
-        id="our-solution"
-        className="container mx-auto py-20 space-y-[89px]"
-      >
-        <h2 className="text-white font-satoshi flex-col items-center text-[60px] hidden md:flex font-bold max-w-[937px] mx-auto text-center leading-[100%]">
-          <BoxReveal boxColor={"#fff"} duration={0.5}>
-            <span className="w-full">Unlock the Power of Your Idle </span>
-          </BoxReveal>
-          <BoxReveal boxColor={"#fff"} duration={0.5}>
-            <span>Assets with AI-Driven Efficiency. </span>
-          </BoxReveal>
-        </h2>
-        <h2 className="text-white font-satoshi md:hidden block text-[29px] font-bold max-w-[313px] mx-auto text-center leading-[100%]">
-          Unlock the Power of Your Idle Assets with AI-Driven Efficiency.
-        </h2>
-        <div className="grid md:grid-cols-2 gap-x-[28px] gap-y-[34px]">
+      <section className="max-w-[1235px] mx-auto relative z-10 space-y-[46px] md:py-[256px] py-[96px] px-5">
+        <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#31A88D] rounded-full top-[10%] absolute left-[-15%] blur-[150px] opacity-20" />
+        <h3 className="md:text-[50px] text-[34.518px] font-bold text-center leading-[100%] text-white ">
+          Header Text Here
+        </h3>
+        <div className="grid md:grid-cols-2 md:gap-x-[28px] relative z-10 md:gap-y-[34px] gap-[17.259px]">
           {efficiencyData.map(({ title, description }, index) => (
             <div
               key={index}
               data-aos="fade-up"
               data-aos-duration={1500 * index}
-              className="rounded-[17.931px] space-y-1 md:pb-[34px] pb-[14px] md:pt-[66px] pt-[37px] border-[1.107px] border-b-white/10 border-l-white/10 bg-[#08080F] shadow-[0px_5.517px_12.276px_0px_rgba(0,0,0,0.11)]"
+              className="rounded-[17.931px] space-y-1 md:pb-[30px] pb-[14px] md:pt-[60px] pt-[37px] border-[1.107px] border-b-white/10 border-l-white/10 bg-[#222222] shadow-[0px_5.517px_12.276px_0px_rgba(0,0,0,0.11)]"
             >
               <Image
                 src="/home-3.png"
@@ -200,10 +280,10 @@ export default function Home() {
                 className=""
               />
               <div className="space-y-3">
-                <h3 className="md:text-[33.091px] text-[18.87px] border-l-[3.32px] border-white md:px-11 px-[25px] text-white font-semibold font-satoshi ">
+                <h3 className="md:text-[29.92px] text-[18.87px] border-l-[3.32px] border-white md:px-11 px-[25px] text-white font-semibold font-satoshi ">
                   {title}
                 </h3>
-                <p className="md:text-[18.925px] text-[10.792px] text-white/80 md:px-11 px-[25px]">
+                <p className="md:text-[17.111px] text-[10.792px] text-white/80 md:px-11 px-[25px]">
                   {description}
                 </p>
               </div>
@@ -211,151 +291,236 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="md:rounded-[30px] z-10 relative bg-[#0370F7] md:py-[52px] py-[17px] my-20 md:mx-7">
-        <InfiniteMovingCards>
-          <div className="flex md:gap-[54px] gap-[16.747px] items-center">
-            <Image
-              src="/base.svg"
-              alt="Base Logo"
-              width={113.25}
-              height={30.133}
-              className="md:rounded-[52.336px] rounded-[22.999px] md:h-[30.133px] h-[17px] md:w-[113.25px] w-[35px] bg-white md:p-[8.723px] p-1"
-            />
-            <p className="md:text-[47.434px] text-sm">
-              Simple | Secure | Compliant | Built on
-            </p>
-          </div>
-          <div className="flex md:gap-[54px] gap-[16.747px] items-center">
-            <Image
-              src="/base.svg"
-              alt="Base Logo"
-              width={113.25}
-              height={30.133}
-              className="rounded-[52.336px] md:h-[30.133px] h-[17px] md:w-[113.25px] w-[43px] bg-white p-[8.723px]"
-            />
-            <p className="md:text-[47.434px] text-sm">
-              Simple | Secure | Compliant | Built on
-            </p>
-          </div>
-        </InfiniteMovingCards>
+      <section className="bg-[url(/home-6.png)] md:h-[831px] h-[327.529px] relative flex items-center justify-center bg-cover bg-center bg-no-repeat">
+        <div className="h-[342px]  bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 md:-top-[10%] -top-[59%]" />
+        <h2 className="md:text-[83.021px] text-[32.722px] max-w-[1026.203px] relative z-10 mx-auto text-center font-bold leading-[100%] capitalize">
+          Unlocking value from a hidden resource
+        </h2>
+        <div className="h-[342px] bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 md:-bottom-[15%] -bottom-[69%]" />
       </section>
-      <section className="bg-[#000] md:block hidden -mb-60 -mt-30 blur-[56.80000305175781px]  w-[150%] -translate-x-[20%] h-[442px]" />
-      <section className="relative">
-        <div className="bg-[url(/home-7.png)] h-full w-full absolute translate-x-1/2 -left-1/2 -top-1/2 translate-y-1/2 bg-cover bg-center bg-no-repeat [mix-blend-mode:color-dodge] blur-[151.60000610351562px]" />
-        <section className="container md:my-40 mx-auto space-y-[61px] !relative md:!py-10 py-5 md:!px-[51px] px-6 rounded-[32px] border-2 border-[#002F6E]">
-          <h2 className="text-[50px] font-bold md:block hidden leading-[100%] max-w-[1062px]">
-            <BoxReveal boxColor={"#fff"} duration={0.5}>
-              <span> Bridging Your Assets to Decentralized </span>
-            </BoxReveal>
-            <BoxReveal boxColor={"#fff"} duration={0.5}>
-              <span>Infrastructure with smart choices made by AI.</span>
-            </BoxReveal>
-          </h2>
-          <h2 className="md:text-[50px] text-[29px] md:hidden font-bold leading-[100%] max-w-[1062px]">
-            Bridging Your Assets to Decentralized Infrastructure with smart
-            choices made by AI.
-          </h2>
-          <div className="w-full relative z-10 space-y-[50px] ">
-            <div className="space-y-[39px]">
-              <h2 className="text-[40px] ">Liquid Staking</h2>
-              <div className="flex md:flex-row flex-col gap-3.5 items-stretch justify-between">
-                <Image
-                  src="/liquid-collective.svg"
-                  alt="Base Logo"
-                  width={220}
-                  height={202}
-                  className="bg-white/10 md:size-[220px] size-[180px] py-[20px] rounded-[17px] md:p-[34px] md:py-[54px] w-full"
-                />
-                <Image
-                  src="/lido.svg"
-                  alt="Base Logo"
-                  width={220}
-                  height={202}
-                  className="bg-white/10  md:size-[220px] size-[180px] py-[20px] rounded-[17px] md:p-[34px] md:py-[54px] w-full "
-                />
-                <Image
-                  src="/rocket-pool.svg"
-                  alt="Base Logo"
-                  width={220}
-                  height={202}
-                  className="bg-white/10  md:size-[220px] size-[180px] py-[20px] rounded-[17px] md:p-[34px] md:py-[54px] w-full"
-                />
-                <Image
-                  src="/solv.svg"
-                  alt="Base Logo"
-                  width={220}
-                  height={202}
-                  className="bg-white/10  md:size-[220px] size-[180px] py-[20px] rounded-[17px] md:p-[34px] md:py-[54px] w-full"
-                />
-              </div>
-            </div>
-            <div className="space-y-[39px]">
-              <h2 className="text-[40px] ">DePIN Protocols</h2>
-              <div className="flex md:flex-row gap-3.5 flex-col items-stretch justify-between">
-                <Image
-                  src="/morphware.svg"
-                  alt="Base Logo"
-                  width={220}
-                  height={202}
-                  className="bg-white/10  md:size-[220px] size-[180px] py-[20px] rounded-[17px] md:p-[34px] md:py-[54px] w-full "
-                />
-                <Image
-                  src="/file-coin.svg"
-                  alt="Base Logo"
-                  width={220}
-                  height={202}
-                  className="bg-white/10  md:size-[220px] size-[180px] py-[20px] rounded-[17px] md:p-[34px] md:py-[54px] w-full "
-                />
-                <Image
-                  src="/render-network.svg"
-                  alt="Base Logo"
-                  width={220}
-                  height={202}
-                  className="bg-white/10  md:size-[220px] size-[180px] py-[20px] rounded-[17px] md:p-[34px] md:py-[54px] w-full "
-                />
-                <Image
-                  src="/akash.svg"
-                  alt="Base Logo"
-                  width={220}
-                  height={202}
-                  className="bg-white/10  md:size-[220px] size-[180px] py-[20px] rounded-[17px] md:p-[34px] md:py-[54px] w-full "
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-      <section className="bg-[#000] md:block hidden -mb-60 -mt-30 blur-[56.80000305175781px]  w-[150%] -translate-x-[20%] h-[442px]" />
-      <section className="bg-[url(/home-6.png)] md:h-[711px] flex items-center justify-center bg-cover bg-center bg-no-repeat">
-        <section className="py-40 md:flex hidden container mx-auto items-center justify-center gap-[30px]">
-          <Icons.logo2 />
-          <MorphingText
-            texts={["IdleFinance", "IdleFinance"]}
-            className="!text-[117.608px] !font-bold"
-          />
 
-          <span className="text-[117.608px]  font-bold invisible">
-            IdleFinance
-          </span>
-        </section>
-        <div className="flex md:hidden py-20 justify-center z-10 relative items-center gap-[6.46px]">
-          <Icons.logo />
-          <span className="text-[23.858px] text-[#EBF9FF] font-bold">
-            IdleFinance
-          </span>
+      <section className="max-w-[1235px] mx-auto relative space-y-[68px] md:py-[113px] py-[50px] px-5">
+        <div className="space-y-[18px]">
+          <h3 className="text-center md:text-[50px] text-[20px] font-bold leading-[100%] text-[#FFFEFE]">
+            Genuine People, Genuine Rewards
+          </h3>
+          <p className="md:text-xl text-xs text-white/80 text-center">
+            Idle is already being used by millions of people around the world
+          </p>
+        </div>
+        <div className="space-y-[23px]">
+          <div className="flex md:flex-row flex-col items-stretch gap-[23px]">
+            <div className="rounded-[16px] overflow-hidden bg-[#222] py-4 px-[18px]">
+              <div className="flex items-center gap-6">
+                <div className="md:space-y-[56px] space-y-[51.04px]">
+                  <div className="space-y-[46px] max-w-[484px]">
+                    <div className="md:space-y-[27px] space-y-[30.101px]">
+                      <Icons.quote />
+                      <p className="text-white/80 md:text-xl text-[13.09px]">
+                        Before Idle, I had no idea my idle crypto assets could
+                        actually generate this much passive income. The platform
+                        made it ridiculously simple to set things up, and now
+                        I'm earning rewards without constantly watching the
+                        market. It honestly feels like free money.
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center md:gap-3 gap-2">
+                        <button
+                          type="button"
+                          className="rounded-[14px] border whitespace-nowrap border-[#F7F7F742] text-[#FFFFFFCC] md:text-xl text-[13.087px] font-medium md:px-[25.5px] px-4 md:py-[10.5px] py-1.5 hover:bg-white/10 transition-colors duration-200"
+                        >
+                          Liam W.
+                        </button>
+                        <button
+                          type="button"
+                          className="bg-[#FFFFFF1A] rounded-[14px] text-[#FFFFFFCC] md:text-xl text-[13.087px] font-medium px-4 md:py-[10.5px] py-1.5 flex items-center gap-2.5 hover:bg-white/40 transition-colors duration-200"
+                        >
+                          <Icons.location />
+                          Toronto
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <Image src="/s-b.png" alt="" width={186} height={364} />
+              </div>
+            </div>
+            <div className="rounded-[16px] bg-[#222] py-4 px-[18px]">
+              <div className="flex items-center gap-6">
+                <div className="space-y-[56px]">
+                  <div className="space-y-[78px] max-w-[484px]">
+                    <div className="space-y-[27px]">
+                      <Icons.quote />
+                      <p className="text-white/80 md:text-xl text-[13.09px]">
+                        What I love about Idle is that it's transparent and
+                        actually delivers. No fluff, just results.
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src="/s-c.png"
+                        alt=""
+                        width={51}
+                        height={51}
+                        className="rounded-full size-[51px]"
+                      />
+                      <div className="flex items-center md:gap-3 gap-2">
+                        <button
+                          type="button"
+                          className="rounded-[14px] border whitespace-nowrap border-[#F7F7F742] text-[#FFFFFFCC] md:text-xl text-[13.087px] font-medium md:px-[25.5px] px-4 md:py-[10.5px] py-1.5 hover:bg-white/10 transition-colors duration-200"
+                        >
+                          Takeshi N.
+                        </button>
+                        <button
+                          type="button"
+                          className="bg-[#FFFFFF1A] rounded-[14px] text-[#FFFFFFCC] md:text-xl text-[13.087px] font-medium px-4 md:py-[10.5px] py-1.5 flex items-center gap-2.5 hover:bg-white/40 transition-colors duration-200"
+                        >
+                          <Icons.location />
+                          Tokyo
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex md:flex-row flex-col items-stretch gap-[23px]">
+            <div className="gap-y-[23px] w-full flex flex-col">
+              <div className="rounded-[16px] bg-[#222] h-full py-4 px-[18px]">
+                <div className="flex items-center gap-6">
+                  <div className="space-y-[56px]">
+                    <div className="space-y-[78px] max-w-[484px]">
+                      <div className="space-y-[27px]">
+                        <Icons.quote />
+                        <p className="text-white/80 md:text-xl text-[13.09px]">
+                          I've used a bunch of DeFi tools, but Idle is the only
+                          one I trust to auto-optimize my returns.
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Image
+                          src="/s-f.png"
+                          alt=""
+                          width={51}
+                          height={51}
+                          className="rounded-full size-[51px]"
+                        />
+                        <div className="flex items-center md:gap-3 gap-2">
+                          <button
+                            type="button"
+                            className="rounded-[14px] border whitespace-nowrap border-[#F7F7F742] text-[#FFFFFFCC] md:text-xl text-[13.087px] font-medium md:px-[25.5px] px-4 md:py-[10.5px] py-1.5 hover:bg-white/10 transition-colors duration-200"
+                          >
+                            Samuel K.
+                          </button>
+                          <button
+                            type="button"
+                            className="bg-[#FFFFFF1A] rounded-[14px] text-[#FFFFFFCC] md:text-xl text-[13.087px] font-medium px-4 md:py-[10.5px] py-1.5 flex items-center gap-2.5 hover:bg-white/40 transition-colors duration-200"
+                          >
+                            <Icons.location />
+                            Berlin
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="rounded-[16px] h-full bg-[#222] py-4 px-[18px]">
+                <div className="flex items-center gap-6">
+                  <div className="space-y-[56px]">
+                    <div className="space-y-[78px] max-w-[484px]">
+                      <div className="space-y-[27px]">
+                        <Icons.quote />
+                        <p className="text-white/80 md:text-xl text-[13.09px]">
+                          Before Idle, I had no idea my idle crypto assets could
+                          actually generate this much passive income. The
+                          platform made it
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Image
+                          src="/s-e.png"
+                          alt=""
+                          width={51}
+                          height={51}
+                          className="rounded-full size-[51px]"
+                        />
+                        <div className="flex items-center md:gap-3 gap-2">
+                          <button
+                            type="button"
+                            className="rounded-[14px] border whitespace-nowrap border-[#F7F7F742] text-[#FFFFFFCC] md:text-xl text-[13.087px] font-medium md:px-[25.5px] px-4 md:py-[10.5px] py-1.5 hover:bg-white/10 transition-colors duration-200"
+                          >
+                            Susan A.
+                          </button>
+                          <button
+                            type="button"
+                            className="bg-[#FFFFFF1A] rounded-[14px] text-[#FFFFFFCC] md:text-xl text-[13.087px] font-medium px-4 md:py-[10.5px] py-1.5 flex items-center gap-2.5 hover:bg-white/40 transition-colors duration-200"
+                          >
+                            <Icons.location />
+                            London
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-[16px] bg-[#222] py-4 px-[18px] w-full">
+              <div className="flex items-center gap-6">
+                <div className="space-y-[56px]">
+                  <div className="space-y-[46px] ">
+                    <div className="space-y-[27px]">
+                      <Icons.quote />
+                      <p className="text-white/80 md:text-xl text-[13.09px]">
+                        My assets used to sit idle pun intended. Now they
+                        generate steady rewards while I sleep.
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center md:gap-3 gap-2">
+                        <button
+                          type="button"
+                          className="rounded-[14px] border whitespace-nowrap border-[#F7F7F742] text-[#FFFFFFCC] md:text-xl text-[13.087px] font-medium md:px-[25.5px] px-4 md:py-[10.5px] py-1.5 hover:bg-white/10 transition-colors duration-200"
+                        >
+                          Nate A.
+                        </button>
+                        <button
+                          type="button"
+                          className="bg-[#FFFFFF1A] rounded-[14px] text-[#FFFFFFCC] md:text-xl text-[13.087px] font-medium px-4 md:py-[10.5px] py-1.5 flex items-center gap-2.5 hover:bg-white/40 transition-colors duration-200"
+                        >
+                          <Icons.location />
+                          San Francisco
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <Image
+                    src="/s-d.png"
+                    alt=""
+                    width={524}
+                    height={284}
+                    className="w-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      <section className="bg-[#00000B] md:block hidden -mt-70 blur-[56px] h-[442px]  w-[150%] -translate-x-[20%]" />
-      <section id="team" className="container mx-auto py-20 space-y-[63px]">
-        <h2 className="text-[50px] md:block hidden  font-bold leading-[100%] max-w-[599px]">
-          <BoxReveal boxColor={"#fff"} duration={0.5}>
-            <span>Meet our talented team!</span>
-          </BoxReveal>
-        </h2>
-        <h2 className="md:text-[50px] md:hidden text-[29px] font-bold leading-[100%] max-w-[599px]">
-          Meet our talented team!
-        </h2>
-        <div className="grid md:grid-cols-3 gap-x-[55.89px] md:gap-y-[102.9px] gap-y-20">
+
+      <section id="team" className="py-20 space-y-[60px]">
+        <div className="max-w-[1235px] px-5 mx-auto">
+          <h2 className="md:text-[50px] text-[29px] font-bold leading-[100%] max-w-[599px]">
+            <BoxReveal boxColor={"#fff"} duration={0.5}>
+              <span>Meet our talented team!</span>
+            </BoxReveal>
+          </h2>
+        </div>
+
+        <InfiniteMovingCards className="gap-x-[55.89px] flex md:gap-y-[102.9px] gap-y-20">
           {teamData.map(
             (
               {
@@ -374,7 +539,7 @@ export default function Home() {
                 data-aos-duration={1500 * index}
                 className="space-y-[33px]"
               >
-                <div className="space-y-[17.88px]">
+                <div className="flex md:flex-row flex-col gap-5">
                   <Image
                     src={image}
                     alt="Base Logo"
@@ -382,207 +547,119 @@ export default function Home() {
                     height={439.09}
                     className="md:rounded-[60px] rounded-[30px]"
                   />
-                  <div className="space-y-[13.75px]">
-                    <h2 className="md:text-[27.947px] text-xl font-bold leading-normal">
-                      {name}
-
-                      {/* |{" "}
-                      <span className="text-[#8B8B8B] md:text-[22.866px] text-lg">
+                  <div className="space-y-[28.64px] max-w-[446px]">
+                    <div className="space-y-4">
+                      <h2 className="md:text-[24.258px] text-xl font-bold leading-normal">
+                        {name}
+                      </h2>
+                      <h3 className="md:text-[19.847px] text-lg text-[#8B8B8B] leading-normal">
                         {designation}
-                      </span> */}
-                    </h2>
-                    <h3 className="md:text-[22.866px] text-lg text-[#8B8B8B] leading-normal">
-                      {designation}
-                    </h3>
+                      </h3>
+                      <p className="md:text-base text-sm leading-normal">
+                        {description}
+                      </p>
+                    </div>
+                    <Link
+                      href={socialMediaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-[49.123px] border-[1.228px] border-[#F6F6F64D] py-3 px-8 underline text-[21.24px] "
+                    >
+                      {socialMediaName}
+                    </Link>
                   </div>
-                  <p className="md:text-[20.325px] leading-normal">
-                    {description}
-                  </p>
                 </div>
-                <Link
-                  href={socialMediaUrl}
-                  className="rounded-[49.123px] border-[1.228px] border-[#F6F6F64D] py-3 px-8 underline text-[21.24px] "
-                >
-                  {socialMediaName}
-                </Link>
               </div>
             ),
           )}
-        </div>
+        </InfiniteMovingCards>
       </section>
+      <section className="space-y-[49px] max-w-[1235px] px-5 mx-auto">
+        <h4 className="md:text-[30px] text-[20px] font-medium leading-[100%]">
+          Selected Experience from
+        </h4>
 
-      <section className="px-2 md:py-[80px]">
-        <section className="container  rounded-[32px] md:mx-auto linear-border-wrapper overflow-hidden">
-          <div className="space-y-11 bg-[#00000B] md:px-12 py-8 px-[18px] rounded-[22px]">
-            <h2 className="text-[40px] md:inline-block hidden font-medium leading-[100%]">
-              <BoxReveal boxColor={"#fff"} duration={0.5}>
-                <span>Selected Experience from</span>
-              </BoxReveal>
-            </h2>
-            <h2 className="text-[29px] md:hidden font-bold leading-[100%]">
-              Selected Experience from
-            </h2>
-            <div className="md:space-y-6 space-y-[7.84px]">
-              <div className="flex md:gap-[18.267px] gap-[7.84px] ">
-                <div className="bg-white/10  p-[8.845px] !w-full flex items-center justify-center md:rounded-[17px] rounded-[4.42px] md:p-[34px] md:py-[54px]">
-                  <Image
-                    src="/world-economic-forum.svg"
-                    alt="Base Logo"
-                    width={195.938}
-                    height={114.472}
-                    className=""
-                  />
-                </div>
-                <div className="bg-white/10  p-[8.845px] !w-full flex items-center justify-center md:rounded-[17px] rounded-[4.42px] md:p-[34px] md:py-[54px]">
-                  <Image
-                    src="/meta.svg"
-                    alt="Base Logo"
-                    width={236.259}
-                    height={114.754}
-                    className=""
-                  />
-                </div>
-                <div className="bg-white/10  p-[8.845px] !w-full flex items-center justify-center md:rounded-[17px] rounded-[4.42px] md:p-[34px] md:py-[54px]">
-                  <Image
-                    src="/pwc.svg"
-                    alt="Base Logo"
-                    width={163.328}
-                    height={110.011}
-                    className=""
-                  />
-                </div>
-                <div className="bg-white/10  p-[8.845px] !w-full flex items-center justify-center md:rounded-[17px] rounded-[4.42px] md:p-[34px] md:py-[54px]">
-                  <Image
-                    src="/bcg.svg"
-                    alt="Base Logo"
-                    width={160.835}
-                    height={107.929}
-                    className=""
-                  />
-                </div>
+        <InfiniteMovingCards className=" bg-[#0059CE] rounded-[12px] md:py-8 py-2.5">
+          <Image
+            src="/world-economic-forum.svg"
+            alt=""
+            width={107.682}
+            height={66.587}
+          />
+          <Image src="/meta.svg" alt="" width={217.752} height={63.635} />
+          <Image src="/snap.svg" alt="" width={61.667} height={61.667} />
+          <Image src="/pwc.svg" alt="" width={76.667} height={61.667} />
+          <Image src="/bcg.svg" alt="" width={179.096} height={66.587} />
+          <Image src="/google.svg" alt="" width={211.242} height={65.596} />
+          <Image src="/paypal.svg" alt="" width={245.108} height={65.298} />
+        </InfiniteMovingCards>
+      </section>
+      <section className="md:py-[200px] py-[50px] px-5 max-w-[1235px] mx-auto">
+        <div className="get-started-bg rounded-[16px] overflow-hidden">
+          <div className="relative overflow-hidden w-full md:h-auto h-[630px] md:bg-[url(/n-g.png)] bg-[url(/n-h.png)] md:bg-right bg-bottom bg-contain bg-no-repeat">
+            {/* <div className="get-started-bg opacity-70 absolute h-full w-full" /> */}
+            <div className="md:py-[49px] md:px-[59px] py-[41px] px-[29px] space-y-[71px] relative">
+              <div className="space-y-[26px] md:max-w-[606px] max-w-[266.922px]">
+                <h3 className="md:text-[54.65px] text-[40px] font-semibold">
+                  Download Idle App Now!
+                </h3>
+                <p className="md:text-[34px] text-[20px] text-white/80 ">
+                  Idle finance chrome extension will be available on chrome web
+                  store soon
+                </p>
               </div>
-              <div className="flex md:gap-[18.267px] gap-[7.84px]">
-                <div className="bg-white/10  p-[8.845px] !w-full flex items-center justify-center md:rounded-[17px] rounded-[4.42px] md:p-[34px] md:py-[54px]">
-                  <Image
-                    src="/paypal.svg"
-                    alt="Base Logo"
-                    width={387.568}
-                    height={114}
-                    className=""
-                  />
-                </div>
-                <div className="bg-white/10  p-[8.845px] !w-full flex items-center justify-center md:rounded-[17px] rounded-[4.42px] md:p-[34px] md:py-[54px]">
-                  <Image
-                    src="/snap.svg"
-                    alt="Base Logo"
-                    width={253.945}
-                    height={175}
-                    className=""
-                  />
-                </div>
-                <div className="bg-white/10  p-[8.845px] !w-full flex items-center justify-center md:rounded-[17px] rounded-[4.42px] md:p-[34px] md:py-[54px]">
-                  <Image
-                    src="/google.svg"
-                    alt="Base Logo"
-                    width={219.012}
-                    height={91.255}
-                    className=""
-                  />
-                </div>
-              </div>
-              <div className="flex md:gap-[18.267px] gap-[7.84px]">
-                <div className="bg-white/10  p-[8.845px] !w-full md:max-w-[452.445px] flex items-center justify-center md:rounded-[17px] rounded-[4.42px] md:p-[34px] md:py-[54px]">
-                  <Image
-                    src="/forbes.svg"
-                    alt="Base Logo"
-                    width={387.568}
-                    height={114}
-                    className=""
-                  />
-                </div>
-              </div>
+              <Button className="idle-button hover:opacity-80 md:text-base text-[11.064px]">
+                Download Idle
+              </Button>
             </div>
           </div>
-        </section>
+        </div>
       </section>
-
-      <section className="container mx-auto py-20 md:space-y-[91px] space-y-20">
-        <h2 className="text-[84px] md:inline-block hidden font-bold leading-[100%]">
-          <BoxReveal boxColor={"#fff"} duration={0.5}>
-            <span>Frequently</span>
-          </BoxReveal>
-          <BoxReveal boxColor={"#fff"} duration={0.5}>
-            <span>Asked Questions.</span>
-          </BoxReveal>
-        </h2>
-        <h2 className="text-[29px] md:hidden font-bold leading-[100%]">
-          Frequently Asked Questions.
-        </h2>
-
-        <Accordion type="single" collapsible className="space-y-[17.134px]">
-          {faqData.map(({ value, question, answer }, index) => (
-            <AccordionItem
-              key={index}
-              data-aos="fade-up"
-              data-aos-duration={100 * index}
-              value={value}
-              className="rounded-[25.701px] border-none bg-[#131619] p-[12.238px] data-[state=open]:bg-[#2B2B2B] "
-            >
-              <AccordionTrigger className="md:text-[31.86px] text-xl text-[#EBF9FF]">
-                {question}
-              </AccordionTrigger>
-              <AccordionContent className="p-[12.238px] text-[#8F8F8F] md:text-[31.86px] text-xl font-medium">
-                {answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
-      <section className="bg-[#000] md:block hidden -mb-80 blur-[56.80000305175781px]  w-[150%] -translate-x-[20%] h-[442px]" />
-      <section className="relative">
-        <div className="absolute w-full h-full bg-bottom opacity-30 pointer-events-none">
-          <section className="bg-[#000] md:block hidden -mb-80 blur-[56.80000305175781px]  w-[150%] -translate-x-[20%] h-[442px]" />
+      <section className="relative overflow-hidden pt-[181px]">
+        <div className="absolute w-full bg-bottom opacity-30 pointer-events-none">
+          <section className="bg-[#000] md:block hidden -mb-80 blur-[56.80000305175781px]  w-[150%] -translate-x-[20%] h-[942px]" />
           <Image
             src="/footer-1.png"
             alt="Hero Image"
             width={1284.961}
             height={827.2}
-            className="w-full h-full object-cover pointer-events-none"
+            className="w-full h-full object- pointer-events-none"
           />
         </div>
-        <section className="flex md:flex-row z-10 relative flex-col items-center overflow-hidden mx-1 justify-between container md:mx-auto my-20 md:rounded-[20px] md:py-0 py-10 !pl-10 border border-[#0A79E6] shadow-[0px_4px_12.2px_0px_#000] bg-[linear-gradient(90deg,#0370F7_-14.87%,#31A88D_54.05%)]">
-          <div className="flex flex-col justify-between items-start">
-            <div className="space-y-[22px]">
-              <h3 className="text-[#EBF9FF] md:text-[33.67px] text-xl font-light">
-                Ready to start earning?
-              </h3>
-              <h2 className="md:text-[68.65px] text-[40px] font-medium md:max-w-[402px] leading-[100%]">
-                Download Idle Finance Desktop App
-              </h2>
-            </div>
-            <Link
-              // href="/download"
-              href="#"
-              className={cn(
-                buttonVariants(),
-                "py-2.5 px-5 mt-[53px] mb-[89.72px]  h-auto rounded-[71.112px] border-[#374EFF] border-2 gap-[9.046px] text-[21.711px] font-medium",
-              )}
-            >
-              {/* <Icons.window /> */}
-              Coming soon
-            </Link>
-          </div>
-          <Image
-            data-aos="fade-left"
-            src="/home-5.png"
-            alt="Base Logo"
-            className="md:block hidden -mr-5"
-            width={834}
-            height={572}
-          />
-        </section>
+        <div className="max-w-[1235px] px-5 mx-auto py-20 md:space-y-[91px] space-y-20">
+          <h2 className="md:text-[70px] text-[29px] faq-txt font-bold leading-[100%]">
+            <BoxReveal boxColor={"#fff"} duration={0.5}>
+              <span className="faq-text">Frequently Asked Questions.</span>
+            </BoxReveal>
+          </h2>
+
+          <Accordion
+            type="single"
+            collapsible
+            className="space-y-[17.134px] relative z-10"
+          >
+            {faqData.map(({ value, question, answer }, index) => (
+              <AccordionItem
+                key={index}
+                data-aos="fade-up"
+                data-aos-duration={100 * index}
+                value={value}
+                className="rounded-[25.701px] border-none bg-[#2B2B2B29] p-[12.238px] data-[state=open]:bg-[#131619A1] "
+              >
+                <AccordionTrigger className="md:text-[28px] text-xl text-[#EBF9FF]">
+                  {question}
+                </AccordionTrigger>
+                <AccordionContent className="p-[12.238px] text-[#8F8F8F] md:text-[28.618px] text-xl">
+                  {answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
         <Footer />
       </section>
     </main>
   );
-}
+};
+
+export default Page;
