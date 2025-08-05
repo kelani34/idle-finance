@@ -27,11 +27,11 @@ const Page = () => {
   return (
     <main className="bg-[#070708] overflow-hidden">
       <section className="bg-[url('/n-a.png')] bg-no-repeat  bg-cover ">
-        <div className="bg-[url('/d-a.png')] bg-no-repeat h-screen  pt-[150px] bg-bottom-right bg-size-[1338.56px_842.00px]">
-          <div className="max-w-[1235px]  px-2 mx-auto relative z-10 md:space-y-0 space-y-[55px]">
-            <div className="flex md:flex-row pb-[75px] flex-col gap-[69px] md:items-start items-center justify-between">
-              <div className="space-y-3 max-w-[513px] mt-[75px]">
-                <div className="p-2.5 pr-[26px] md:mx-0 mx-auto border border-[#5F5F5F] rounded-[102px] w-max flex items-center gap-[14px]">
+        <div className="bg-[url('/d-a.png')] bg-no-repeat h-screen  md:pt-[150px] pt-[50px] md:bg-bottom-right bg-[-250px_100%] md:bg-size-[1338.56px_842.00px] bg-size-[759px_430px]">
+          <div className="max-w-[1235px]  px-5 mx-auto relative z-10 md:space-y-0 space-y-[55px]">
+            <div className="flex md:flex-row pb-[75px] flex-col gap-[69px] items-start justify-between">
+              <div className="md:space-y-3 space-y-[30px] max-w-[513px] mt-[75px]">
+                <div className="p-2.5 pr-[26px] md:mx-0 mmd:x-auto border border-[#5F5F5F] rounded-[102px] w-max flex items-center gap-[14px]">
                   <div className="flex items-center ">
                     <AnimatedTooltip items={people} />
                   </div>
@@ -40,10 +40,10 @@ const Page = () => {
                   </span>
                 </div>
                 <div className="space-y-[30px]">
-                  <h1 className="md:text-[60px] max-w-[480px] capitalize text-[40px] font-bold text-white leading-[100%]">
+                  <h1 className="md:text-[60px] max-w-[480px] capitalize text-[42.588px] font-bold text-white leading-[100%]">
                     Download the Idle Finance app
                   </h1>
-                  <h2 className="md:text-2xl text-lg font-medium text-white max-w-[580px]">
+                  <h2 className="md:text-2xl text-[17.035px] font-medium text-white max-w-[580px]">
                     Start earning rewards by sharing your unused internet. Tap
                     into a hidden resource and join the network today.
                   </h2>
@@ -56,7 +56,7 @@ const Page = () => {
         </div>
       </section>
       <section className="relative">
-        <div className="h-[342px] bg-[#070708] blur-[60px] w-[150%] absolute left-1/2 -translate-x-1/2 -top-[180px]" />
+        <div className="h-[342px] bg-[#070708] blur-[60px] w-[150%] absolute left-1/2 -translate-x-1/2 md:-top-[180px] -top-[80px]" />
         <div className="relative z-10 space-y-[60px] mx-auto md:py-[150px] py-[50px]  px-5 max-w-[1235px]">
           <h3 className="md:text-[48px] text-[30px] font-bold leading-[100%] text-white ">
             Supported Devices

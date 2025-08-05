@@ -14,7 +14,7 @@ export const Navbar = () => {
               IdleFinance
             </span>
           </Link>
-          <Button className="idle-button hover:opacity-80">
+          <Button className="idle-button md:visible invisible hover:opacity-80">
             Download Idle
           </Button>
         </div>
