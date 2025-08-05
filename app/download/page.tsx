@@ -27,7 +27,7 @@ const Page = () => {
   return (
     <main className="bg-[#070708] overflow-hidden bg-grain relative">
       <section className="bg-[url('/n-a.png')] bg-no-repeat  bg-cover ">
-        <div className="bg-[url('/d-a.png')] bg-no-repeat h-screen  md:pt-[150px] pt-[50px] md:bg-bottom-right bg-[-250px_100%] md:bg-size-[1338.56px_842.00px] bg-size-[759px_430px]">
+        <div className="bg-[url('/d-a.png')] bg-no-repeat h-screen  md:pt-[150px] pt-[50px] md:bg-bottom-right bg-[-250px_100%] md:bg-size-[100%_100%] bg-size-[759px_430px]">
           <div className="max-w-[1235px]  px-5 mx-auto relative z-10 md:space-y-0 space-y-[55px]">
             <div className="flex md:flex-row pb-[75px] flex-col gap-[69px] items-start justify-between">
               <div className="md:space-y-3 space-y-[30px] max-w-[513px] mt-[75px]">
@@ -109,11 +109,11 @@ const Page = () => {
               <Icons.keyboardOpen />
             </div>
             <div className="md:space-y-4 space-y-[11.064px] md:max-w-[386px] max-w-[213.676px]">
-              <h3 className="md:text-[29.92px] md:translate-y-10 duration-300 group-hover:translate-y-0 text-[20.69px] font-semibold">
+              <h3 className="md:text-[29.92px] text-[20.69px] font-semibold">
                 Create an account
               </h3>
               <div className="overflow-hidden">
-                <p className="md:text-[17.111px] md:translate-y-10 md:group-hover:translate-y-0 delay-100 duration-300 text-[11.833px] text-white/80 ">
+                <p className="md:text-[17.111px] text-[11.833px] text-white/80 ">
                   Log into your Idle account
                 </p>
               </div>
@@ -129,11 +129,11 @@ const Page = () => {
               <Icons.keyboardOpen />
             </div>
             <div className="md:space-y-4 space-y-[11.064px] md:max-w-[386px] max-w-[213.676px]">
-              <h3 className="md:text-[29.92px] md:translate-y-10 duration-300 group-hover:translate-y-0 text-[20.69px] font-semibold">
+              <h3 className="md:text-[29.92px] text-[20.69px] font-semibold">
                 Download
               </h3>
               <div className="overflow-hidden">
-                <p className="md:text-[17.111px] md:translate-y-10 md:group-hover:translate-y-0 delay-100 duration-300 text-[11.833px] text-white/80 ">
+                <p className="md:text-[17.111px] text-[11.833px] text-white/80 ">
                   Download the IDLE FINANCE App
                 </p>
               </div>
@@ -149,11 +149,11 @@ const Page = () => {
               <Icons.keyboardOpen />
             </div>
             <div className="md:space-y-4 space-y-[11.064px] md:max-w-[386px] max-w-[213.676px]">
-              <h3 className="md:text-[29.92px] md:translate-y-10 duration-300 group-hover:translate-y-0 text-[20.69px] font-semibold">
+              <h3 className="md:text-[29.92px] text-[20.69px] font-semibold">
                 Earn
               </h3>
               <div className="overflow-hidden">
-                <p className="md:text-[17.111px] md:translate-y-14 md:group-hover:translate-y-0 delay-100 duration-300 text-[11.833px] text-white/80 ">
+                <p className="md:text-[17.111px] text-[11.833px] text-white/80 ">
                   Sign into your Idle account to start earning rewards
                 </p>
               </div>

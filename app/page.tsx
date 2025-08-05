@@ -231,10 +231,7 @@ const Page = () => {
               </div>
               <Link
                 href="/download"
-                className={cn(
-                  buttonVariants(),
-                  "idle-button hover:opacity-80 md:text-base text-[11.064px]",
-                )}
+                className="idle-button hover:opacity-80 md:text-base text-[11.064px] max-w-[181px]"
               >
                 Download Idle
               </Link>
@@ -632,10 +629,7 @@ const Page = () => {
               </div>
               <Link
                 href="/download"
-                className={cn(
-                  buttonVariants(),
-                  "idle-button hover:opacity-80 md:text-base text-[11.064px]",
-                )}
+                className="idle-button hover:opacity-80 md:text-base text-[11.064px] max-w-[181px]"
               >
                 Download Idle
               </Link>
