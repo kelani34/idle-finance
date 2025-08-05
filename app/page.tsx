@@ -40,23 +40,25 @@ const Page = () => {
       <section className="bg-[url('/n-a.png')] bg-no-repeat bg-cover md:pt-[150px] pt-[75px] pb-[75px]">
         <div className="max-w-[1235px] px-2 mx-auto relative z-10 md:space-y-0 space-y-[55px]">
           <div className="flex md:flex-row flex-col gap-[69px] md:items-start items-center justify-between">
-            <div className="space-y-3 max-w-[622px] mt-[75px]">
-              <div className="flex items-center gap-3">
-                <span className="text-[11.152px] font-semibold text-white rounded-[40.424px] bg-black/10 px-[33.5px] py-[9px]">
-                  Easy
-                </span>
-                <span className="text-[11.152px] font-semibold text-white rounded-[40.424px] bg-black/10 px-[33.5px] py-[9px]">
-                  Reliable
-                </span>
-              </div>
-              <div className="space-y-[30px]">
-                <h1 className="md:text-[60px] text-[40px] font-bold text-white leading-[100%]">
-                  Monetize Your Surplus Resources Effortlessly
-                </h1>
-                <h2 className="md:text-2xl text-lg font-medium text-white max-w-[580px]">
-                  Turn idle compute, bandwidth, and storage into revenue with
-                  our AI-powered optimization engine.
-                </h2>
+            <div className="space-y-[49px]">
+              <div className="space-y-3 max-w-[622px] mt-[75px]">
+                <div className="flex items-center gap-3">
+                  <span className="text-[11.152px] font-semibold text-white rounded-[40.424px] bg-black/10 px-[33.5px] py-[9px]">
+                    Easy
+                  </span>
+                  <span className="text-[11.152px] font-semibold text-white rounded-[40.424px] bg-black/10 px-[33.5px] py-[9px]">
+                    Reliable
+                  </span>
+                </div>
+                <div className="space-y-[30px]">
+                  <h1 className="md:text-[60px] text-[40px] font-bold text-white leading-[100%]">
+                    Monetize Your Surplus Resources Effortlessly
+                  </h1>
+                  <h2 className="md:text-2xl text-lg font-medium text-white max-w-[580px]">
+                    Turn idle compute, bandwidth, and storage into revenue with
+                    our AI-powered optimization engine.
+                  </h2>
+                </div>
               </div>
               <div className="flex items-center md:gap-12 gap-7">
                 <Link
