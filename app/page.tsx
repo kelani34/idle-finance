@@ -262,7 +262,7 @@ const Page = () => {
       <section className="max-w-[1235px] mx-auto relative z-10 space-y-[46px] md:py-[256px] py-[96px] px-5">
         <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#31A88D] rounded-full top-[10%] absolute left-[-15%] blur-[150px] opacity-20" />
         <h3 className="md:text-[50px] text-[34.518px] font-bold text-center leading-[100%] text-white ">
-          Header Text Here
+          Unlock the Power of Your Idle Assets with AI-Driven Efficiency
         </h3>
         <div className="grid md:grid-cols-2 md:gap-x-[28px] relative z-10 md:gap-y-[34px] gap-[17.259px]">
           {efficiencyData.map(({ title, description }, index) => (
