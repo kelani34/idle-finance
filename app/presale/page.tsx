@@ -173,11 +173,10 @@ const Page = () => {
                         $Idle Presale info
                       </h2>
                       <p className="md:text-xl text-[#6C6C6C] font-medium">
-                        commodo ligula eget dolor. Aenean massa. Cum sociis
-                        natoque penatibus et magnis dis parturient montes,
-                        nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                        pellentesque eu, pretium quis, sem. Nulla consequat
-                        massa quis eni
+                        To contribute to the ICO, please send your funds of any
+                        denomination to the address below. Your contribution
+                        will be logged on chain to ensure your airdrop will be
+                        received on our token generation event.
                       </p>
                     </div>
                     <Button
