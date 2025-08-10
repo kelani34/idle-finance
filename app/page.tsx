@@ -53,11 +53,11 @@ const Page = () => {
                 </h2>
               </div>
             </div>
-            <div className="flex items-center md:gap-12 gap-7">
+            <div className="flex items-center gap-7">
               <Link
                 href="#more"
                 type="button"
-                className="rounded-[8px] whitespace-nowrap !border-[#D8D8D8] border-[1px] learn-more-button-shadow !bg-none md:text-base text-sm font-semibold text-white md:px-[48.5px] px-8 h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
+                className="rounded-[8px] whitespace-nowrap !border-[#D8D8D8] border-[1px] !bg-none md:text-base text-sm font-semibold text-white md:px-[48.5px] px-8 h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
               >
                 Learn more
               </Link>
