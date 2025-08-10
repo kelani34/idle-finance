@@ -172,6 +172,7 @@ const Page = () => {
                     alt="Hero Image"
                     width={267}
                     height={67.4}
+                    className="max-h-[67px] overflow-hidden object-cover"
                   />
 
                   <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#00F] rounded-full -top-[100%] absolute right-[-45%] blur-[150px] opacity-[0.87]" />
