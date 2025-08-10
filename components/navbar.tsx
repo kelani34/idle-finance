@@ -11,7 +11,7 @@ export const Navbar = () => {
 
   const isHomePage = pathname === "/";
   const isDownloadPage = pathname === "/download";
-  const isPresalePage = pathname === "/presale";
+  const isPresalePage = pathname === "/idle-ico";
 
   const docsUrl =
     process.env.NEXT_PUBLIC_DOCS_URL ||
@@ -30,25 +30,15 @@ export const Navbar = () => {
           </Link>
 
           <div className="flex items-center gap-4">
-            {/* Docs link - visible on all pages */}
-            <a
-              href={docsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
-            >
-              Docs
-            </a>
-
             {isHomePage && (
               <Link
-                href="/download"
+                href="/idle-ico"
                 className={cn(
                   buttonVariants(),
                   "idle-button md:visible invisible hover:opacity-80",
                 )}
               >
-                Download Idle
+                $IDLE ICO
               </Link>
             )}
 
