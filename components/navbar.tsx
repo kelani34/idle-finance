@@ -10,7 +10,7 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   const isHomePage = pathname === "/";
-  const isDownloadPage = pathname === "/download";
+  const isDownloadPage = pathname === "/idle-ico";
 
   return (
     <div className="w-full fixed z-[999]">
@@ -39,7 +39,7 @@ export const Navbar = () => {
 
             {isDownloadPage && (
               <Link
-                href="#more"
+                href="/#more"
                 type="button"
                 className="rounded-[8px] !border-[#D8D8D8] border-[1px] learn-more-button-shadow !bg-none md:text-base text-sm font-semibold text-white px-[48.5px] h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
               >
