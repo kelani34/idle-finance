@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icons } from "./ui/icons";
-import { Button, buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
@@ -11,6 +11,11 @@ export const Navbar = () => {
 
   const isHomePage = pathname === "/";
   const isDownloadPage = pathname === "/download";
+  const isPresalePage = pathname === "/presale";
+
+  const docsUrl =
+    process.env.NEXT_PUBLIC_DOCS_URL ||
+    "https://idle-finance.gitbook.io/idle-finance.md/";
 
   return (
     <div className="w-full fixed z-[999]">
@@ -24,27 +29,48 @@ export const Navbar = () => {
             </span>
           </Link>
 
-          {isHomePage && (
-            <Link
-              href="/download"
-              className={cn(
-                buttonVariants(),
-                "idle-button md:visible invisible hover:opacity-80",
-              )}
+          <div className="flex items-center gap-4">
+            {/* Docs link - visible on all pages */}
+            <a
+              href={docsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
-              Download Idle
-            </Link>
-          )}
+              Docs
+            </a>
 
-          {isDownloadPage && (
-            <Link
-              href="#more"
-              type="button"
-              className="rounded-[8px] !border-[#D8D8D8] border-[1px] learn-more-button-shadow !bg-none md:text-base text-sm font-semibold text-white px-[48.5px] h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
-            >
-              Learn more
-            </Link>
-          )}
+            {isHomePage && (
+              <Link
+                href="/download"
+                className={cn(
+                  buttonVariants(),
+                  "idle-button md:visible invisible hover:opacity-80",
+                )}
+              >
+                Download Idle
+              </Link>
+            )}
+
+            {isDownloadPage && (
+              <Link
+                href="#more"
+                type="button"
+                className="rounded-[8px] !border-[#D8D8D8] border-[1px] learn-more-button-shadow !bg-none md:text-base text-sm font-semibold text-white px-[48.5px] h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
+              >
+                Learn more
+              </Link>
+            )}
+
+            {isPresalePage && (
+              <Link
+                href="/"
+                className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
+              >
+                Back to Home
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export const Footer = () => {
   return (
-    <footer className="border-[#313131] py-[61px] flex md:flex-row flex-col gap-4 items-center justify-between border-t container mx-auto">
+    <footer className=" py-[61px] flex md:flex-row flex-col gap-4 items-center justify-between container mx-auto">
       <div className="flex items-center gap-[8.69px]">
         <Icons.logo3 />
         <span className="text-[32.097px] text-[#EBF9FF] font-bold">

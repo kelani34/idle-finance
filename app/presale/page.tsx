@@ -8,20 +8,17 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft } from "lucide-react";
+import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 const RECEIVE_BASE_ADDRESS = "0x0072752A1a60959D1FA7881EE0911FB71a7e1815";
 
 const Page = () => {
   const [showSummary, setShowSummary] = useState(false);
-  const receiveAmount = "0.0";
-  const receiveAddress = "0x0072752A1a60959D1FA7881EE0911FB71a7e1815";
-  const refundWallet = "0x0072752A1a60959D1FA7881EE0911FB71a7e1815";
-  const sendAmount = "0.0";
+  const [isCopied, setIsCopied] = useState(false);
 
   const handleCopy = () => {
     const textToCopy = RECEIVE_BASE_ADDRESS;
@@ -29,7 +26,11 @@ const Page = () => {
     navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
+        setIsCopied(true);
         toast.success("Address copied to clipboard!");
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 2000);
       })
       .catch(() => {
         toast.error("Failed to copy address.");
@@ -142,99 +143,106 @@ const Page = () => {
         </AnimatePresence>
         <AnimatePresence mode="wait">
           {showSummary && (
-            <motion.section
-              key="summary"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -40 }}
-              transition={{ duration: 0.4 }}
-              className="max-w-[1074px] mx-auto z-10 space-y-[26px] pt-[150px] relative"
-            >
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setShowSummary(false);
-                }}
-                className="text-xl !p-2.5 h-auto rounded-[12px] !bg-[#01010D] text-[#B9CBE3]"
+            <section className="relative">
+              <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#31A88D] rounded-full top-[10%] absolute left-[-15%] blur-[150px] opacity-20" />
+              <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#31A88D] rounded-full top-[40%] absolute right-[-15%] blur-[150px] opacity-20" />
+              <motion.section
+                key="summary"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -40 }}
+                transition={{ duration: 0.4 }}
+                className="max-w-[1074px] mx-auto z-10 space-y-[26px] pt-[150px] pb-[175px] relative"
               >
-                <ChevronLeft size={24} className="size-6" />
-                Back
-              </Button>
-
-              <div className="rounded-[28px] m-2 md:p-12 p-4 overflow-hidden bg-[#0A0B0B] border border-white/[0.05] relative flex items-center gap-[28px]">
-                <div className="space-y-[1px] max-w-[585px]">
-                  <h2 className="text-[30px] font-semibold leading-normal">
-                    Initial Coin Offering
-                  </h2>
-                  <p className="text-[#B3B3B3] text-xl leading-normal">
-                    To contribute to the ICO, please send your funds of any
-                    denomination to the address below. Your contribution will be
-                    logged on chain to ensure your airdrop will be received
-                    during Token Generation Event(TGE).
-                  </p>
-                </div>
-
-                <Image
-                  src="/p-b.svg"
-                  alt="Hero Image"
-                  width={267}
-                  height={67.4}
-                />
-
-                <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#00F] rounded-full -top-[100%] absolute right-[-45%] blur-[150px] opacity-[0.87]" />
-              </div>
-              <div className="rounded-[28px] m-2 bg-[#0A0B0B] border border-white/[0.05] ">
-                <div className="md:px-[34px] md:py-[29px] p-4 flex md:flex-row flex-col md:items-center justify-between">
-                  <h2 className="md:text-[30px] text-2xl text-[#B9CBE3] font-semibold">
-                    Send to
-                  </h2>
-                  <p className="text-[#D6D6D6] md:text-lg ">
-                    Ensure the recipient's information is correct before
-                    sending.
-                  </p>
-                </div>
-                <Separator />
-                <div className="md:py-[26px] md:px-[49px] p-4 flex md:flex-row flex-col items-stretch justify-between">
-                  <div className="max-w-[533px] !h-full w-full space-y-[34px]">
-                    <Label
-                      htmlFor="get"
-                      className="text-[#B3B3B3] text-lg mb-3 block"
-                    >
-                      To this address
-                    </Label>
-                    <div className="relative h-full">
-                      <Textarea
-                        id="get"
-                        value={RECEIVE_BASE_ADDRESS}
-                        className="rounded-xl border-white/[0.05] p-5 pr-14 resize-none h-full !text-[47px] !font-semibold !bg-[#0E0E0E] shadow-[2px_4px_8px_0px_rgba(0,0,0,0.08)] backdrop-blur-[3px] blur-[0.10000000149011612px]"
-                        placeholder=""
-                      />
-
-                      <Button
-                        size="icon"
-                        variant="ghost"
-                        onClick={handleCopy}
-                        className="text-white absolute right-3 top-3 flex gap-1.5 text-2xl"
-                      >
-                        <Icons.copy />
-                      </Button>
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <Image
-                      src="/qr.svg"
-                      alt="qr code"
-                      className="rounded-lg bg-white p-2"
-                      width={283.76}
-                      height={283.76}
-                    />
-                    <p className="text-[17.735px] text-center mx-auto">
-                      Scan this QR
+                <div className="rounded-[28px] m-2 md:py-10 md:px-[42px] p-4 overflow-hidden bg-[#0A0B0B] border border-white/[0.05] relative flex items-center gap-[20px]">
+                  <div className="space-y-[1px] max-w-[585px]">
+                    <h2 className="text-[30px] font-semibold leading-normal">
+                      Initial Coin Offering
+                    </h2>
+                    <p className="text-[#B3B3B3] text-xl leading-normal">
+                      To contribute to the ICO, please send your funds (ETH) of
+                      any denomination to the address below on base blockchain.
+                      Your contribution will be logged on-chain to ensure your
+                      airdrop will be received during TGE (Token Generation
+                      Event).
                     </p>
                   </div>
+
+                  <Image
+                    src="/p-b.svg"
+                    alt="Hero Image"
+                    width={267}
+                    height={67.4}
+                  />
+
+                  <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#00F] rounded-full -top-[100%] absolute right-[-45%] blur-[150px] opacity-[0.87]" />
                 </div>
-              </div>
-            </motion.section>
+                <div className="rounded-[28px] m-2 bg-[#0A0B0B] border border-white/[0.05] ">
+                  <h2 className="md:text-[30px] text-2xl  p-4 md:py-[29px] md:px-[34px] text-[#B9CBE3] font-semibold">
+                    Send to
+                  </h2>
+
+                  <Separator />
+                  <div className="md:py-[51px] md:px-[49px] md:gap-[64px] gap-4 p-4 flex flex-col-reverse items-center justify-between">
+                    <div className=" !h-full w-full space-y-[34px]">
+                      <Label
+                        htmlFor="get"
+                        className="text-[#B3B3B3] text-lg mb-3 block"
+                      >
+                        To this address
+                      </Label>
+                      <div className="relative h-full">
+                        <Input
+                          id="get"
+                          value={RECEIVE_BASE_ADDRESS}
+                          className="rounded-xl border-white/[0.05] p-[21px] pr-14 resize-none h-max !text-[27px] !font-semibold !bg-[#0E0E0E] shadow-[2px_4px_8px_0px_rgba(0,0,0,0.08)] backdrop-blur-[3px] blur-[0.10000000149011612px]"
+                          placeholder=""
+                        />
+
+                        <Button
+                          size="default"
+                          variant="ghost"
+                          onClick={handleCopy}
+                          className={`absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2 text-sm font-medium transition-all duration-200 px-3 py-2 rounded-lg border ${
+                            isCopied
+                              ? "bg-green-600/20 border-green-500/30 text-green-400 hover:bg-green-600/30"
+                              : "bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30"
+                          }`}
+                        >
+                          {isCopied ? (
+                            <>
+                              <div className="h-4 w-4">
+                                <Check />
+                              </div>
+                              Copied
+                            </>
+                          ) : (
+                            <>
+                              <div className="h-5 w-5">
+                                <Icons.copy />
+                              </div>
+                              Copy
+                            </>
+                          )}
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <Image
+                        src="/qr-2.svg"
+                        alt="qr code"
+                        className="rounded-lg bg-white p-2"
+                        width={283.76}
+                        height={283.76}
+                      />
+                      <p className="text-[18.619px] text-center mx-auto">
+                        Scan this QR
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.section>
+            </section>
           )}
         </AnimatePresence>
         <Footer />
