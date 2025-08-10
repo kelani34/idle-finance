@@ -51,15 +51,6 @@ export const Navbar = () => {
                 Learn more
               </Link>
             )}
-
-            {isPresalePage && (
-              <Link
-                href="/"
-                className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
-              >
-                Back to Home
-              </Link>
-            )}
           </div>
         </div>
       </div>
