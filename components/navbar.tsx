@@ -11,11 +11,6 @@ export const Navbar = () => {
 
   const isHomePage = pathname === "/";
   const isDownloadPage = pathname === "/download";
-  const isPresalePage = pathname === "/idle-ico";
-
-  const docsUrl =
-    process.env.NEXT_PUBLIC_DOCS_URL ||
-    "https://idle-finance.gitbook.io/idle-finance.md/";
 
   return (
     <div className="w-full fixed z-[999]">
