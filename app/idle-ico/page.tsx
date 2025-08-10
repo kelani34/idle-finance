@@ -168,7 +168,7 @@ const Page = () => {
                   </div>
 
                   <Image
-                    src="/p-b.svg"
+                    src="/p-d.svg"
                     alt="Hero Image"
                     width={267}
                     height={67.4}
