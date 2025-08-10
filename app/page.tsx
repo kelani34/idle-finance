@@ -37,54 +37,47 @@ const Page = () => {
   }, []);
   return (
     <main className="bg-[#070708] overflow-hidden bg-grain relative">
-      <section className="bg-[url('/n-a.png')] bg-no-repeat bg-cover md:pt-[150px] pt-[75px] pb-[75px]">
-        <div className="max-w-[1235px] px-2 mx-auto relative z-10 md:space-y-0 space-y-[55px]">
-          <div className="flex md:flex-row flex-col gap-[69px] md:items-start items-center justify-between">
-            <div className="space-y-[49px]">
-              <div className="space-y-3 max-w-[622px] mt-[75px]">
-                <div className="flex items-center gap-3">
-                  <span className="text-[11.152px] font-semibold text-white rounded-[40.424px] bg-black/10 px-[33.5px] py-[9px]">
-                    Easy
-                  </span>
-                  <span className="text-[11.152px] font-semibold text-white rounded-[40.424px] bg-black/10 px-[33.5px] py-[9px]">
-                    Reliable
-                  </span>
-                </div>
-                <div className="space-y-[30px]">
-                  <h1 className="md:text-[60px] text-[40px] font-bold text-white leading-[100%]">
-                    Monetize Your Surplus Resources Effortlessly
-                  </h1>
-                  <h2 className="md:text-2xl text-lg font-medium text-white max-w-[580px]">
-                    Turn idle compute, bandwidth, and storage into revenue with
-                    our AI-powered optimization engine.
-                  </h2>
-                </div>
-              </div>
-              <div className="flex items-center md:gap-12 gap-7">
-                <Link
-                  href="#more"
-                  type="button"
-                  className="rounded-[8px] whitespace-nowrap !border-[#D8D8D8] border-[1px] learn-more-button-shadow !bg-none md:text-base text-sm font-semibold text-white md:px-[48.5px] px-8 h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
-                >
-                  Learn more
-                </Link>
-
-                <div className="flex items-center gap-[6.978px]">
-                  <p className="text-2xl leading-[93.305%] font-satoshi">
-                    Built on
-                  </p>
-
-                  <Image
-                    src="/base.svg"
-                    alt="Base Logo"
-                    width={80.25}
-                    height={21.27}
-                    className="rounded-[6px] bg-white p-[6.271px] "
-                  />
-                </div>
+      <section className="relative md:pt-[150px] pt-[75px] pb-[75px]">
+        <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#31A88D] rounded-full top-[10%] absolute left-[-15%] blur-[150px] opacity-20" />
+        <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#035BCF] rounded-full top-[40%] absolute right-[-5%] blur-[150px] opacity-20 z-10" />
+        <div className="max-w-[1235px] px-2 mx-auto relative flex flex-col items-center md:space-y-[85px] space-y-6 z-10 ">
+          <div className="space-y-[49px] flex flex-col items-center">
+            <div className="space-y-[22px] max-w-[622px] mt-[75px] flex flex-col items-center">
+              <div className="space-y-[30px]">
+                <h1 className="md:text-[60px] text-[40px] text-center font-bold text-white leading-[100%]">
+                  Monetize Your Surplus Resources Effortlessly
+                </h1>
+                <h2 className="md:text-2xl text-lg text-center font-medium text-white max-w-[580px]">
+                  Turn idle compute, bandwidth, and storage into revenue with
+                  our AI-powered optimization engine.
+                </h2>
               </div>
             </div>
-            <div className="relative">
+            <div className="flex items-center md:gap-12 gap-7">
+              <Link
+                href="#more"
+                type="button"
+                className="rounded-[8px] whitespace-nowrap !border-[#D8D8D8] border-[1px] learn-more-button-shadow !bg-none md:text-base text-sm font-semibold text-white md:px-[48.5px] px-8 h-auto py-[14px] hover:bg-white/10 hover:text-white transition-colors duration-200"
+              >
+                Learn more
+              </Link>
+
+              <div className="flex items-center gap-[6.978px]">
+                <p className="text-2xl leading-[93.305%] font-satoshi">
+                  Built on
+                </p>
+
+                <Image
+                  src="/base.svg"
+                  alt="Base Logo"
+                  width={80.25}
+                  height={21.27}
+                  className="rounded-[6px] bg-white p-[6.271px] "
+                />
+              </div>
+            </div>
+          </div>
+          {/* <div className="relative">
               <div className="md:w-[544px] relative md:h-[601.465px] bg-grain w-[326.51px] h-[361px] bg-[#2E2E2E] md:aspect-[544.00/601.46] aspect-[326.51px/361px] rounded-[16px] hero-img-shadow">
                 <Image
                   src="/n-o.png"
@@ -108,8 +101,8 @@ const Page = () => {
                 height={113.43}
                 className="absolute top-[15%] md:size-[113.43] size-[57.645px] -right-[7%] animate-pulse"
               />
-            </div>
-          </div>
+            </div> */}
+
           <div className="p-2.5 pr-[26px] md:mx-0 mx-auto bg-black/30 rounded-[102px] w-max flex items-center gap-[14px]">
             <div className="flex items-center ">
               <AnimatedTooltip items={people} />
