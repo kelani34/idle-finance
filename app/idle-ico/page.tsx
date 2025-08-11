@@ -2,6 +2,7 @@
 
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
+import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
 import { Icons } from "@/components/ui/icons";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,6 +12,7 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Pie, PieChart } from "recharts";
 import { toast } from "sonner";
 
 const RECEIVE_BASE_ADDRESS = "0x0072752A1a60959D1FA7881EE0911FB71a7e1815";
@@ -42,7 +44,7 @@ const Page = () => {
         {!showSummary && (
           <motion.section
             key="presale"
-            className="relative md:pt-[243px] pt-[150px]"
+            className="relative md:pt-[243px] pt-[150px] space-y-6"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -40 }}
@@ -73,21 +75,258 @@ const Page = () => {
                   Submit a Contribution
                 </Button>
               </div>
-              <div className="relative mx-auto w-max">
-                <Image
-                  src="/p-a.svg"
-                  alt="Hero Image"
-                  width={254.602}
-                  height={254.602}
-                  className="object-cover blur-[44.5px] animate-ping !duration-1000 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none"
-                />
-                <Image
-                  src="/p-a.svg"
-                  alt="Hero Image"
-                  width={254.602}
-                  height={254.602}
-                  className="object-cover pointer-events-none relative delay-500 animate-bounce !duration-1000"
-                />
+            </div>{" "}
+            <div className="flex items-center md:flex-row flex-col justify-center gap-8 max-w-[879px] mx-auto px-5 w-full">
+              {/* Donut Chart */}
+              <div className="relative">
+                <ChartContainer
+                  config={{
+                    lp: {
+                      label: "LP (Liquidity Pool)",
+                    },
+                    ecosystem: {
+                      label: "Ecosystem Development",
+                    },
+                    team: {
+                      label: "Team",
+                    },
+                    partnerships: {
+                      label: "Partnerships",
+                    },
+                    cex: {
+                      label: "CEX Listings",
+                    },
+                    presale: {
+                      label: "Pre-sale",
+                    },
+                  }}
+                  className="md:size-[500px] size-[250px]"
+                >
+                  <PieChart>
+                    <defs>
+                      <linearGradient
+                        id="lpGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="0%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stopColor="#1A76FF" />
+                        <stop offset="100%" stopColor="#CCE7FF" />
+                      </linearGradient>
+                      <linearGradient
+                        id="ecosystemGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="0%"
+                      >
+                        <stop offset="0%" stopColor="#B9F8EF" />
+                        <stop offset="53.61%" stopColor="#07FDF4" />
+                        <stop offset="100%" stopColor="#9EEC46" />
+                      </linearGradient>
+                    </defs>
+                    <ChartTooltip
+                      cursor={false}
+                      content={({ active, payload }) => {
+                        if (active && payload && payload.length) {
+                          const data = payload[0].payload;
+                          return (
+                            <div className="bg-black/90 border border-white/20 rounded-lg p-3 text-white">
+                              <p className="font-medium">{data.name}</p>
+                              <p className="text-sm text-gray-300">
+                                {data.percentage}% •{" "}
+                                {data.amount.toLocaleString()}
+                              </p>
+                            </div>
+                          );
+                        }
+                        return null;
+                      }}
+                    />
+                    <Pie
+                      className="md:block hidden"
+                      data={[
+                        {
+                          name: "LP (Liquidity Pool)",
+                          value: 40,
+                          amount: 200000000,
+                          percentage: 40,
+                          fill: "url(#lpGradient)",
+                        },
+                        {
+                          name: "Pre-sale",
+                          value: 30,
+                          amount: 150000000,
+                          percentage: 30,
+                          fill: "url(#ecosystemGradient)",
+                        },
+                        {
+                          name: "Team",
+                          value: 10,
+                          amount: 50000000,
+                          percentage: 10,
+                          fill: "#C49300",
+                        },
+                        {
+                          name: "Ecosystem Development",
+                          value: 9.5,
+                          amount: 47500000,
+                          percentage: 9.5,
+                          fill: "#B39372",
+                        },
+
+                        {
+                          name: "Partnerships",
+                          value: 5.5,
+                          amount: 27500000,
+                          percentage: 5.5,
+                          fill: "#FF4646",
+                        },
+                        {
+                          name: "CEX Listings",
+                          value: 5,
+                          amount: 25000000,
+                          percentage: 5,
+                          fill: "#374EFF",
+                        },
+                      ]}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={90}
+                      outerRadius={200}
+                      paddingAngle={0}
+                      dataKey="value"
+                    />
+                    <Pie
+                      className="md:hidden"
+                      data={[
+                        {
+                          name: "LP (Liquidity Pool)",
+                          value: 40,
+                          amount: 200000000,
+                          percentage: 40,
+                          fill: "url(#lpGradient)",
+                        },
+                        {
+                          name: "Pre-sale",
+                          value: 30,
+                          amount: 150000000,
+                          percentage: 30,
+                          fill: "url(#ecosystemGradient)",
+                        },
+                        {
+                          name: "Team",
+                          value: 10,
+                          amount: 50000000,
+                          percentage: 10,
+                          fill: "#C49300",
+                        },
+                        {
+                          name: "Ecosystem Development",
+                          value: 9.5,
+                          amount: 47500000,
+                          percentage: 9.5,
+                          fill: "#B39372",
+                        },
+
+                        {
+                          name: "Partnerships",
+                          value: 5.5,
+                          amount: 27500000,
+                          percentage: 5.5,
+                          fill: "#FF4646",
+                        },
+                        {
+                          name: "CEX Listings",
+                          value: 5,
+                          amount: 25000000,
+                          percentage: 5,
+                          fill: "#374EFF",
+                        },
+                      ]}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={40}
+                      outerRadius={85}
+                      paddingAngle={0}
+                      dataKey="value"
+                    />
+                  </PieChart>
+                </ChartContainer>
+              </div>
+
+              {/* Custom Legend */}
+              <div className="space-y-4">
+                {[
+                  {
+                    name: "LP (Liquidity Pool)",
+                    percentage: 40,
+                    amount: 200000000,
+                    color: "linear-gradient(180deg, #1A76FF 0%, #CCE7FF 100%)",
+                    bgStyle: {
+                      background:
+                        "linear-gradient(180deg, #1A76FF 0%, #CCE7FF 100%)",
+                    },
+                  },
+                  {
+                    name: "Pre-sale",
+                    percentage: 30,
+                    amount: 150000000,
+
+                    color:
+                      "linear-gradient(90deg, #B9F8EF 0%, #07FDF4 53.61%, #9EEC46 100%)",
+                    bgStyle: {
+                      background:
+                        "linear-gradient(90deg, #B9F8EF 0%, #07FDF4 53.61%, #9EEC46 100%)",
+                    },
+                  },
+                  {
+                    name: "Team",
+                    percentage: 10,
+                    amount: 50000000,
+                    color: "#C49300",
+                    bgStyle: { backgroundColor: "#C49300" },
+                  },
+                  {
+                    name: "Ecosystem Development",
+                    percentage: 9.5,
+                    amount: 47500000,
+                    color: "#B39372",
+                    bgStyle: { backgroundColor: "#B39372" },
+                  },
+
+                  {
+                    name: "Partnerships",
+                    percentage: 5.5,
+                    amount: 27500000,
+
+                    color: "#FF4646",
+                    bgStyle: { backgroundColor: "#FF4646" },
+                  },
+                  {
+                    name: "CEX Listings",
+                    percentage: 5,
+                    amount: 25000000,
+
+                    color: "#374EFF",
+                    bgStyle: { backgroundColor: "#374EFF" },
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 group cursor-pointer"
+                    title={`${item.percentage}% • ${item.amount.toLocaleString()}`}
+                  >
+                    <div
+                      className="w-3.5 h-6 flex-shrink-0"
+                      style={item.bgStyle}
+                    />
+                    <span className="text-white font-medium text-[25px]">
+                      {item.name}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.section>
