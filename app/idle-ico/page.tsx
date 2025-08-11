@@ -308,7 +308,6 @@ const Page = () => {
                     name: "CEX Listings",
                     percentage: 5,
                     amount: 25000000,
-
                     color: "#374EFF",
                     bgStyle: { backgroundColor: "#374EFF" },
                   },
@@ -327,6 +326,9 @@ const Page = () => {
                     </span>
                   </div>
                 ))}
+                <span className="text-white font-medium text-[25px]">
+                  Total Supply: 500M
+                </span>
               </div>
             </div>
           </motion.section>
