@@ -10,7 +10,7 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   const isHomePage = pathname === "/";
-  const isDownloadPage = pathname === "/idle-ico";
+  const isDownloadPage = pathname === "/ico";
 
   return (
     <div className="w-full fixed z-[999]">
@@ -27,7 +27,7 @@ export const Navbar = () => {
           <div className="flex items-center gap-4">
             {isHomePage && (
               <Link
-                href="/idle-ico"
+                href="/ico"
                 className={cn(
                   buttonVariants(),
                   "idle-button md:visible invisible hover:opacity-80",
