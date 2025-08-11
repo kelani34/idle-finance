@@ -15,7 +15,7 @@ import { useState } from "react";
 import { Pie, PieChart } from "recharts";
 import { toast } from "sonner";
 
-const RECEIVE_BASE_ADDRESS = "0x0072752A1a60959D1FA7881EE0911FB71a7e1815";
+const RECEIVE_BASE_ADDRESS = "0x6E63C840c25467a2F673a995d174339be04e1b7E";
 
 const Page = () => {
   const [showSummary, setShowSummary] = useState(false);
@@ -468,7 +468,7 @@ const Page = () => {
                     </div>
                     <div className="space-y-3">
                       <Image
-                        src="/qr-2.svg"
+                        src="/qr-3.svg"
                         alt="qr code"
                         className="rounded-lg bg-white p-2"
                         width={283.76}
