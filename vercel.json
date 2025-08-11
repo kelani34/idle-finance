@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ico.idlefinances.com"
+        }
+      ],
+      "destination": "https://idlefinances.com/ico",
+      "permanent": true
+    }
+  ]
+}
