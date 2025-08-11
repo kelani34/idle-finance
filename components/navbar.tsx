@@ -33,7 +33,8 @@ export const Navbar = () => {
                   "idle-button md:visible invisible hover:opacity-80",
                 )}
               >
-Initial Coin Offering              </Link>
+                Initial Coin Offering{" "}
+              </Link>
             )}
 
             {isDownloadPage && (

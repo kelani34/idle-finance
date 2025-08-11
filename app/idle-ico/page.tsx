@@ -132,11 +132,11 @@ const Page = () => {
                         if (active && payload && payload.length) {
                           const data = payload[0].payload;
                           return (
-                            <div className="bg-black/90 border border-white/20 rounded-lg p-3 text-white">
-                              <p className="font-medium">{data.name}</p>
+                            <div className="bg-black/90 border border-white/20 rounded-lg px-3 py-1 text-white">
+                              {/* <p className="font-medium">{data.name}</p> */}
                               <p className="text-sm text-gray-300">
                                 {data.percentage}% •{" "}
-                                {data.amount.toLocaleString()}
+                                {data.amount.toLocaleString()} Tokens
                               </p>
                             </div>
                           );
