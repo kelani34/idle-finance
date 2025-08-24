@@ -195,7 +195,10 @@ const Page = () => {
           <h3 className="md:text-[52.079px] text-[38.56px] max-w-[400px] font-medium text-center leading-[100%] text-white ">
             Download Idle App Now!
           </h3>
-          <Button className="py-6 px-[58px] h-auto">Download Idle</Button>
+          <Button className="py-6 px-[58px] h-auto">
+            Coming Soon
+            {/* Download Idle */}
+          </Button>
         </div>
       </section>
       <section className="relative overflow-hidden pt-[181px]">

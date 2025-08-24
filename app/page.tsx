@@ -317,7 +317,7 @@ const Page = () => {
         <div className="h-[342px] bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 md:-bottom-[15%] -bottom-[69%]" />
       </section>
 
-      <section className="max-w-[1235px] mx-auto relative space-y-[68px] md:py-[113px] py-[50px] px-5">
+      {/* <section className="max-w-[1235px] mx-auto relative space-y-[68px] md:py-[113px] py-[50px] px-5">
         <div className="space-y-[18px]">
           <h3 className="text-center md:text-[50px] text-[20px] font-bold leading-[100%] text-[#FFFEFE]">
             Genuine People, Genuine Rewards
@@ -527,7 +527,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Carousel
         opts={{
@@ -568,7 +568,7 @@ const Page = () => {
             ) => (
               <CarouselItem
                 key={index}
-                className="space-y-[33px] md:basis-1/2 md:mr-[55px] "
+                className="space-y-[33px] lg:basis-1/2  md:mr-[55px] md:min-w-[700px]"
               >
                 <div className="flex md:flex-row flex-col gap-5">
                   <Image
@@ -576,7 +576,7 @@ const Page = () => {
                     alt=""
                     width={439.09}
                     height={439.09}
-                    className="md:rounded-[60px] md:max-w-[381.046px] md:max-h-[381.046px]  rounded-[30px]"
+                    className="md:rounded-[60px] md:h-full md:w-full md:max-w-[381.046px] md:max-h-[381.046px]  rounded-[30px]"
                   />
                   <div className="space-y-[28.64px] max-w-[446px]">
                     <div className="space-y-4">
@@ -586,7 +586,7 @@ const Page = () => {
                       <h3 className="md:text-[19.847px] text-lg text-[#8B8B8B] leading-normal">
                         {designation}
                       </h3>
-                      <p className="md:text-base text-sm leading-normal">
+                      <p className="md:text-sm text-sm leading-normal">
                         {description}
                       </p>
                     </div>

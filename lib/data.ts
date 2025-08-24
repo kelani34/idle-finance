@@ -71,14 +71,14 @@ export const teamData = [
     socialMediaName: "Linkedin",
     position: "Developer",
     description:
-      "Nurudeen is a Senior Cloud and Data Engineer at PwC Netherlands, specializing in designing scalable, secure, and cost-effective cloud solutions for clients across industries. A 7x AWS Certified professional, he brings deep technical expertise in cloud infrastructure, DevOps, and data engineering. Nurudeen is passionate about using technology to drive business transformation and deliver impactful, innovation-led solutions.",
+      "Nurudeen is a Senior Cloud and Data Engineer at PwC United Kingdom, specializing in designing scalable, secure, and cost-effective cloud solutions for clients across industries. A 7x AWS Certified professional, he brings deep technical expertise in cloud infrastructure, DevOps, and data engineering. Nurudeen is passionate about using technology to drive business transformation and deliver impactful, innovation-led solutions.",
   },
   {
     image: "/bruce.png",
     name: "Bruce Le",
     designation: "Chief Operator & Web3 Ecosystem Builder",
-    socialMediaUrl: "https://x.com/BallzyJohnson",
-    socialMediaName: "Twitter",
+    socialMediaUrl: "https://www.linkedin.com/in/bruce-viet-dung-le-7973367a",
+    socialMediaName: "Linkedin",
     position: "Entrepreneur | Web3 Builder | Growth Strategist",
     description:
       "Bruce is Chief Operating Officer with deep experience scaling startups in AI, blockchain, and e-commerce. He has held strategic roles at Deloitte, BCG, and a unicorn startup, combining operational excellence with a strong strategic mindset. As a World Economic Forum Global Shaper and member of the Solana Superteam, Bruce champions Web3 innovation, ecosystem building, and the advancement of decentralized technologies worldwide.",
