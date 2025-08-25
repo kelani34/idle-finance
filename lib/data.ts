@@ -26,6 +26,7 @@ export const teamData = [
     image: "/kelly.png",
     name: "Kelly Tran",
     designation: "Lead Architect",
+    companies: ["/kelly-company-1.svg"],
     socialMediaUrl: "https://www.linkedin.com/in/kellytranha",
     socialMediaName: "Linkedin",
     description:
@@ -36,6 +37,8 @@ export const teamData = [
     image: "/adam.png",
     name: "Adam",
     designation: "CTO",
+    company:"/adam-company.svg",
+    companies: ["/adam-company-1.svg", "/adam-company-2.svg"],
     socialMediaUrl: "https://x.com/adamcrypto321",
     socialMediaName: "Twitter",
     description:
@@ -46,6 +49,7 @@ export const teamData = [
     image: "/david.png",
     name: "David Wang",
     designation: "Innovation Advisor & Global Partnerships Leader",
+    companies: ["/david-company-1.svg", "/david-company-2.svg"],
     socialMediaUrl: "https://x.com/wang_8?s=21",
     socialMediaName: "Twitter",
     position: "Founder @ OpenDeSci | Serial Entrepreneur | Forbes 30U30",
@@ -53,9 +57,14 @@ export const teamData = [
       "David is a Berlin-based serial entrepreneur, investor, and Forbes 30 Under 30 honoree. He is the founder of OpenDeSci, a rapidly growing initiative reshaping open science through decentralized infrastructure. Under his leadership, OpenDeSci has won three industry awards and secured an official sponsorship with a Formula 2 racing team. David is actively building strategic partnerships to scale OpenDeSci’s impact and unlock innovation at the intersection of science, community, and Web3.",
   },
   {
-    image: "/ahn.png",
+    image: "/anh.png",
     name: "Anh Hoang",
     designation: "Digital Growth Engineer",
+    companies: [
+      "/anh-company-1.svg",
+      "/anh-company-2.svg",
+      "/anh-company-3.svg",
+    ],
     socialMediaUrl:
       "https://www.linkedin.com/in/anh-hoang-16158a300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     socialMediaName: "Linkedin",
@@ -67,6 +76,7 @@ export const teamData = [
     image: "/nurudeen.png",
     name: "Nurudeen A",
     designation: "Cloud & Data  Engineer",
+    companies: ["/nurudeen-company-1.svg"],
     socialMediaUrl: "https://www.linkedin.com/in/nurudeen-a-67378486",
     socialMediaName: "Linkedin",
     position: "Developer",
@@ -77,6 +87,7 @@ export const teamData = [
     image: "/bruce.png",
     name: "Bruce Le",
     designation: "Chief Operator & Web3 Ecosystem Builder",
+    companies: ["/bruce-company-1.svg", "/bruce-company-2.svg"],
     socialMediaUrl: "https://www.linkedin.com/in/bruce-viet-dung-le-7973367a",
     socialMediaName: "Linkedin",
     position: "Entrepreneur | Web3 Builder | Growth Strategist",

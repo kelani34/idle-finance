@@ -1,7 +1,6 @@
 "use client";
 
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { Button, buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { efficiencyData, faqData, people, teamData } from "@/lib/data";
@@ -559,10 +558,11 @@ const Page = () => {
               {
                 image,
                 name,
-                designation,
                 description,
                 socialMediaUrl,
                 socialMediaName,
+                companies,
+                company,
               },
               index,
             ) => (
@@ -583,21 +583,42 @@ const Page = () => {
                       <h2 className="md:text-[24.258px] text-xl font-bold leading-normal">
                         {name}
                       </h2>
-                      <h3 className="md:text-[19.847px] text-lg text-[#8B8B8B] leading-normal">
+                      {/* <h3 className="md:text-[19.847px] text-lg text-[#8B8B8B] leading-normal">
                         {designation}
-                      </h3>
+                      </h3> */}
+                      <div className="flex items-center gap-3">
+                        {companies.map((company) => (
+                          <Image
+                            key={company}
+                            src={company}
+                            alt=""
+                            width={99.122}
+                            height={32.689}
+                          />
+                        ))}
+                      </div>
                       <p className="md:text-sm text-sm leading-normal">
                         {description}
                       </p>
                     </div>
-                    <Link
-                      href={socialMediaUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-[49.123px] border-[1.228px] border-[#F6F6F64D] py-3 px-8 underline text-[21.24px] "
-                    >
-                      {socialMediaName}
-                    </Link>
+                    <div className="flex items-center gap-[29px]">
+                      {company && (
+                        <Image
+                          src={company}
+                          alt=""
+                          width={140.243}
+                          height={43.549}
+                        />
+                      )}
+                      <Link
+                        href={socialMediaUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-[49.123px] border-[1.228px] border-[#F6F6F64D] py-3 px-8 underline text-[21.24px] "
+                      >
+                        {socialMediaName}
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </CarouselItem>
