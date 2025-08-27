@@ -41,7 +41,7 @@ export const teamData: TeamMember[] = [
     companies: ["/david-company-1.svg", "/david-company-2.svg"],
     socialMediaUrl: "https://x.com/wang_8?s=21",
     socialMediaName: "Twitter",
-    position: "Founder @ OpenDeSci | Serial Entrepreneur | Forbes 30U30",
+    position: "",
     description:
       "David is a Berlin-based serial entrepreneur, investor, and Forbes 30 Under 30 honoree. He is the founder of OpenDeSci, a rapidly growing initiative reshaping open science through decentralized infrastructure. Under his leadership, OpenDeSci has won three industry awards and secured an official sponsorship with a Formula 2 racing team. David is actively building strategic partnerships to scale OpenDeSci’s impact and unlock innovation at the intersection of science, community, and Web3.",
   },
@@ -52,6 +52,7 @@ export const teamData: TeamMember[] = [
     companies: ["/kelly-company-1.svg"],
     socialMediaUrl: "https://www.linkedin.com/in/kellytranha",
     socialMediaName: "Linkedin",
+    position: "",
     description:
       "Kelly is the founder of Genie, a platform that connects the top 1% of Silicon Valley developers to accelerate innovation across Web3 and emerging technologies. Previously a software engineer at PayPal, she brings deep technical expertise and a passion for building scalable, user-centric solutions. A graduate of the University of Chicago, Kelly combines rigorous academic training with hands-on experience in fintech and blockchain. She leads Genie’s mission to drive adoption of decentralized technologies and foster vibrant developer ecosystems.",
   },

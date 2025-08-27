@@ -235,10 +235,10 @@ const Page = () => {
                 </p>
               </div>
               <Link
-                href="/download"
+                href="#"
                 className="idle-button hover:opacity-80 whitespace-nowrap md:text-base text-[11.064px] max-w-[181px]"
               >
-                Download Idle
+Coming Soon
               </Link>
             </div>
           </div>
@@ -672,10 +672,10 @@ const Page = () => {
                 </p>
               </div>
               <Link
-                href="/download"
+                href="#"
                 className="idle-button hover:opacity-80 md:text-base text-[11.064px] max-w-[181px]"
               >
-                Download Idle
+Coming Soon
               </Link>
             </div>
           </div>
