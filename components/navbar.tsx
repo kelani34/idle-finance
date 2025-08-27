@@ -25,7 +25,7 @@ export const Navbar = () => {
           </Link>
 
           <div className="flex items-center gap-4">
-            {isHomePage && (
+            {/* {isHomePage && (
               <Link
                 href="/ico"
                 className={cn(
@@ -35,7 +35,7 @@ export const Navbar = () => {
               >
                 Initial Coin Offering{" "}
               </Link>
-            )}
+            )} */}
 
             {isDownloadPage && (
               <Link

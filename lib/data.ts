@@ -21,7 +21,30 @@ export const efficiencyData = [
   },
 ];
 
-export const teamData = [
+type TeamMember = {
+  image: string;
+  name: string;
+  designation: string;
+  companies: string[];
+  socialMediaUrl: string;
+  socialMediaName: string;
+  position?: string;
+  description: string;
+  company?: string;
+};
+
+export const teamData: TeamMember[] = [
+  {
+    image: "/david.png",
+    name: "David Wang",
+    designation: "Advisor",
+    companies: ["/david-company-1.svg", "/david-company-2.svg"],
+    socialMediaUrl: "https://x.com/wang_8?s=21",
+    socialMediaName: "Twitter",
+    position: "Founder @ OpenDeSci | Serial Entrepreneur | Forbes 30U30",
+    description:
+      "David is a Berlin-based serial entrepreneur, investor, and Forbes 30 Under 30 honoree. He is the founder of OpenDeSci, a rapidly growing initiative reshaping open science through decentralized infrastructure. Under his leadership, OpenDeSci has won three industry awards and secured an official sponsorship with a Formula 2 racing team. David is actively building strategic partnerships to scale OpenDeSci’s impact and unlock innovation at the intersection of science, community, and Web3.",
+  },
   {
     image: "/kelly.png",
     name: "Kelly Tran",
@@ -33,33 +56,35 @@ export const teamData = [
       "Kelly is the founder of Genie, a platform that connects the top 1% of Silicon Valley developers to accelerate innovation across Web3 and emerging technologies. Previously a software engineer at PayPal, she brings deep technical expertise and a passion for building scalable, user-centric solutions. A graduate of the University of Chicago, Kelly combines rigorous academic training with hands-on experience in fintech and blockchain. She leads Genie’s mission to drive adoption of decentralized technologies and foster vibrant developer ecosystems.",
   },
 
-  {
-    image: "/adam.png",
-    name: "Adam",
-    designation: "CTO",
-    company:"/adam-company.svg",
-    companies: ["/adam-company-1.svg", "/adam-company-2.svg"],
-    socialMediaUrl: "https://x.com/adamcrypto321",
-    socialMediaName: "Twitter",
-    description:
-      "Adam is the CTO behind $500M+ in Web3 protocol builds, partnering with institutions to create scalable, secure blockchain infrastructure. Known for bridging deep technical expertise with collaborative leadership, he drives innovation in decentralized systems, empowering teams to build impactful solutions that shape the future of Web3 and open digital ecosystems.",
-  },
+  // {
+  //   image: "/adam.png",
+  //   name: "Adam",
+  //   designation: "CTO",
+  //   company:"/adam-company.svg",
+  //   companies: ["/adam-company-1.svg", "/adam-company-2.svg"],
+  //   socialMediaUrl: "https://x.com/adamcrypto321",
+  //   socialMediaName: "Twitter",
+  //   description:
+  //     "Adam is the CTO behind $500M+ in Web3 protocol builds, partnering with institutions to create scalable, secure blockchain infrastructure. Known for bridging deep technical expertise with collaborative leadership, he drives innovation in decentralized systems, empowering teams to build impactful solutions that shape the future of Web3 and open digital ecosystems.",
+  // },
 
+ 
+  
   {
-    image: "/david.png",
-    name: "David Wang",
-    designation: "Innovation Advisor & Global Partnerships Leader",
-    companies: ["/david-company-1.svg", "/david-company-2.svg"],
-    socialMediaUrl: "https://x.com/wang_8?s=21",
-    socialMediaName: "Twitter",
-    position: "Founder @ OpenDeSci | Serial Entrepreneur | Forbes 30U30",
+    image: "/nurudeen.png",
+    name: "Nurudeen Aigoro",
+    designation: "",
+    companies: ["/nurudeen-company-1.svg"],
+    socialMediaUrl: "https://www.linkedin.com/in/nurudeen-a-67378486",
+    socialMediaName: "Linkedin",
+    position: "Cloud & Data Engineer",
     description:
-      "David is a Berlin-based serial entrepreneur, investor, and Forbes 30 Under 30 honoree. He is the founder of OpenDeSci, a rapidly growing initiative reshaping open science through decentralized infrastructure. Under his leadership, OpenDeSci has won three industry awards and secured an official sponsorship with a Formula 2 racing team. David is actively building strategic partnerships to scale OpenDeSci’s impact and unlock innovation at the intersection of science, community, and Web3.",
+      "Nurudeen is a Senior Cloud and Data Engineer at PwC London, specializing in designing scalable, secure, and cost-effective cloud solutions for clients across industries. A 7x AWS Certified professional, he brings deep technical expertise in cloud infrastructure, DevOps, and data engineering. Nurudeen is passionate about using technology to drive business transformation and deliver impactful, innovation-led solutions.",
   },
   {
     image: "/anh.png",
     name: "Anh Hoang",
-    designation: "Digital Growth Engineer",
+    designation: "",
     companies: [
       "/anh-company-1.svg",
       "/anh-company-2.svg",
@@ -68,29 +93,18 @@ export const teamData = [
     socialMediaUrl:
       "https://www.linkedin.com/in/anh-hoang-16158a300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     socialMediaName: "Linkedin",
-    position: "Senior Engineer at PwC Netherlands",
+    position: "Digital Growth Engineer",
     description:
       "Anh is a digital growth leader with a track record of scaling technology ventures across Asia and Europe. At Google Singapore, he drove 8-figure revenue growth and led digital transformation for Google Education across 10 APAC countries. A graduate of London Business School, Anh previously held roles at Facebook, Snapchat, and 500 Startups, where he helped scale early-stage companies and advance digital innovation in Southeast Asia.",
   },
   {
-    image: "/nurudeen.png",
-    name: "Nurudeen A",
-    designation: "Cloud & Data  Engineer",
-    companies: ["/nurudeen-company-1.svg"],
-    socialMediaUrl: "https://www.linkedin.com/in/nurudeen-a-67378486",
-    socialMediaName: "Linkedin",
-    position: "Developer",
-    description:
-      "Nurudeen is a Senior Cloud and Data Engineer at PwC United Kingdom, specializing in designing scalable, secure, and cost-effective cloud solutions for clients across industries. A 7x AWS Certified professional, he brings deep technical expertise in cloud infrastructure, DevOps, and data engineering. Nurudeen is passionate about using technology to drive business transformation and deliver impactful, innovation-led solutions.",
-  },
-  {
     image: "/bruce.png",
     name: "Bruce Le",
-    designation: "Chief Operator & Web3 Ecosystem Builder",
+    designation: "",
     companies: ["/bruce-company-1.svg", "/bruce-company-2.svg"],
     socialMediaUrl: "https://www.linkedin.com/in/bruce-viet-dung-le-7973367a",
     socialMediaName: "Linkedin",
-    position: "Entrepreneur | Web3 Builder | Growth Strategist",
+    position: "Chief Operator & Web3 Ecosystem Builder",
     description:
       "Bruce is Chief Operating Officer with deep experience scaling startups in AI, blockchain, and e-commerce. He has held strategic roles at Deloitte, BCG, and a unicorn startup, combining operational excellence with a strong strategic mindset. As a World Economic Forum Global Shaper and member of the Solana Superteam, Bruce champions Web3 innovation, ecosystem building, and the advancement of decentralized technologies worldwide.",
   },

@@ -4,6 +4,10 @@ import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Icons } from "@/components/ui/icons";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { efficiencyData, faqData, people, teamData } from "@/lib/data";
+
+
+
+
 import Image from "next/image";
 import AOS from "aos";
 import { useEffect } from "react";
@@ -563,6 +567,8 @@ const Page = () => {
                 socialMediaName,
                 companies,
                 company,
+                designation,
+                position
               },
               index,
             ) => (
@@ -579,13 +585,18 @@ const Page = () => {
                     className="md:rounded-[60px] md:h-full md:w-full md:max-w-[381.046px] md:max-h-[381.046px]  rounded-[30px]"
                   />
                   <div className="space-y-[28.64px] max-w-[446px]">
-                    <div className="space-y-4">
-                      <h2 className="md:text-[24.258px] text-xl font-bold leading-normal">
+                    <div className="space-y-[11.937px]">
+                      <div className="flex items-center gap-3">
+                      <h2 className="md:text-[24.258px] text-xl font-bold leading-[100%]">
                         {name}
                       </h2>
-                      {/* <h3 className="md:text-[19.847px] text-lg text-[#8B8B8B] leading-normal">
+                      <h3 className="md:text-[19.847px] text-lg text-[#8B8B8B] leading-[100%]">
                         {designation}
-                      </h3> */}
+                        </h3>
+                      </div>
+                       <h3 className="md:text-[19.847px] text-lg text-[#8B8B8B] leading-normal">
+                        {position}
+                        </h3>
                       <div className="flex items-center gap-3">
                         {companies.map((company) => (
                           <Image
