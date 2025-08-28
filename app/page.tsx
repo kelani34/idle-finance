@@ -197,13 +197,13 @@ into revenue with our AI-powered optimization engine.
         />
       </section>
       <section className="bg-[url(/home-8.png)] relative bg-cover bg-center bg-no-repeat">
-        <div className="md:h-[342px] py-4 bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 -top-[20%]" />
-        <div className="mx-auto container md:py-60 py-20  md:h-[980px] relative z-10 flex items-center justify-center">
-          <h1 className="text-[#EBF9FF] max-w-[839px] font-satoshi text-center md:text-[50.593px] text-[32.444px] font-bold leading-[100%] mx-auto">
+        <div className="md:h-[142px] py-4 bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 -top-[20%]" />
+        <div className="mx-auto container md:py-60 py-20  md:h-[280px] relative z-10 flex items-center justify-center">
+          <h1 className="text-[#EBF9FF] max-w-[1139px] font-satoshi text-center md:text-[40.593px] text-[32.444px] font-bold leading-[100%] mx-auto">
 Unexploited idle assets are costing the AI & robotics industries <span className="!text-[#31A88D]">$1.4T</span> annually. Idle finance enables the user to earn from idle resources of their laptops, robots, drones, IoT devices, MCUs and more.
           </h1>
         </div>
-        <div className="md:h-[342px] py-4 bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 -bottom-[20%]" />
+        <div className="md:h-[142px] py-4 bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 -bottom-[20%]" />
       </section>
 
       <section
