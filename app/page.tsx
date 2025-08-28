@@ -4,10 +4,6 @@ import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Icons } from "@/components/ui/icons";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { efficiencyData, faqData, people, teamData } from "@/lib/data";
-
-
-
-
 import Image from "next/image";
 import AOS from "aos";
 import { useEffect } from "react";
@@ -45,14 +41,13 @@ const Page = () => {
         <div className="h-[771.159px] w-[354.353px] md:block hidden rotate-[40.486deg] bg-[#035BCF] rounded-full top-[40%] absolute right-[-5%] blur-[150px] opacity-20 z-10" />
         <div className="max-w-[1235px] px-2 mx-auto relative flex flex-col items-center md:space-y-[85px] space-y-6 z-10 ">
           <div className="space-y-[49px] flex flex-col items-center">
-            <div className="space-y-[22px] max-w-[622px] mt-[75px] flex flex-col items-center">
+            <div className="space-y-[22px] max-w-[722px] mx-auto mt-[75px] flex flex-col items-center">
               <div className="space-y-[30px]">
                 <h1 className="md:text-[60px] text-[40px] text-center font-bold text-white leading-[100%]">
-                  Monetize Your Surplus Resources Effortlessly
+Monetize Idle Assets To Effortlessly Earn From the AI & Robotics Industry
                 </h1>
                 <h2 className="md:text-2xl text-lg text-center font-medium text-white max-w-[580px]">
-                  Turn idle compute, bandwidth, and storage into revenue with
-                  our AI-powered optimization engine.
+                  Turn idle compute, bandwidth, and storage into revenue with our AI-powered optimization engine.
                 </h2>
               </div>
             </div>
@@ -203,9 +198,8 @@ const Page = () => {
       <section className="bg-[url(/home-8.png)] relative bg-cover bg-center bg-no-repeat">
         <div className="md:h-[342px] py-4 bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 -top-[20%]" />
         <div className="mx-auto container md:py-60 py-20  md:h-[980px] relative z-10 flex items-center justify-center">
-          <h1 className="text-[#EBF9FF] max-w-[839px] font-satoshi text-center md:text-[80.593px] text-[32.444px] font-bold leading-[100%] mx-auto">
-            The DePIN market is expected to grow{" "}
-            <NumberTicker value={6000} className="!text-[#31A88D]" />% by 2028.
+          <h1 className="text-[#EBF9FF] max-w-[839px] font-satoshi text-center md:text-[50.593px] text-[32.444px] font-bold leading-[100%] mx-auto">
+Unexploited idle assets are costing the AI & robotics industries <span className="!text-[#31A88D]">$1.4T</span> annually. Idle finance enables the user to earn from idle resources of their laptops, robots, drones, IoT devices, MCUs and more.
           </h1>
         </div>
         <div className="md:h-[342px] py-4 bg-[#070708] blur-[44px] w-[150%] absolute left-1/2 -translate-x-1/2 -bottom-[20%]" />
