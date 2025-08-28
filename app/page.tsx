@@ -43,11 +43,12 @@ const Page = () => {
           <div className="space-y-[49px] flex flex-col items-center">
             <div className="space-y-[22px] max-w-[722px] mx-auto mt-[75px] flex flex-col items-center">
               <div className="space-y-[30px]">
-                <h1 className="md:text-[60px] text-[40px] text-center font-bold text-white leading-[100%]">
+                <h1 className="md:text-[60px] text-[40px] text-center mx-auto font-bold text-white leading-[100%]">
 Monetize Idle Assets To Effortlessly Earn From the AI & Robotics Industry
                 </h1>
-                <h2 className="md:text-2xl text-lg text-center font-medium text-white max-w-[580px]">
-                  Turn idle compute, bandwidth, and storage into revenue with our AI-powered optimization engine.
+                <h2 className="md:text-2xl text-lg text-center font-medium text-white max-w-[580px] mx-auto">
+Turn idle robotics devices, drones, MCUs, IOTs & compute, storage, and bandwidth 
+into revenue with our AI-powered optimization engine.
                 </h2>
               </div>
             </div>
